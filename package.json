@@ -4,6 +4,7 @@
   "main": "process-textures.js",
   "scripts": {
     "process": "node process-textures.js",
+    "sync-docs": "node process-textures.js && node -e \"require('fs').copyFileSync('out/color-mappings.json', 'docs/color-mappings.json')\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

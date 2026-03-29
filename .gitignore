@@ -1,0 +1,4 @@
+node_modules/
+
+# Generated output — rebuild with: npm run process
+out/
