@@ -1,0 +1,16 @@
+{
+  "name": "scratchpad",
+  "version": "1.0.0",
+  "main": "process-textures.js",
+  "scripts": {
+    "process": "node process-textures.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}

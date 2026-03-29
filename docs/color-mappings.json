@@ -1,0 +1,7485 @@
+{
+  "version": 2,
+  "generatedAt": "2026-03-29T17:23:29.658Z",
+  "unmatchedColorDefaults": {
+    "mode": "nearest",
+    "distanceMetric": "oklch",
+    "threshold": 0.1
+  },
+  "dyes": {
+    "black": {
+      "unmatchedColor": {
+        "mode": "nearest",
+        "distanceMetric": "oklch",
+        "threshold": 0.1
+      },
+      "stats": {
+        "referencePairs": 2,
+        "sourceColors": 11
+      },
+      "sourceToTarget": [
+        {
+          "source": "121,59,43",
+          "target": "0,0,0",
+          "sourceRgba": [
+            121,
+            59,
+            43,
+            255
+          ],
+          "targetRgba": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "15,15,15",
+          "sourceRgba": [
+            144,
+            73,
+            49,
+            255
+          ],
+          "targetRgba": [
+            15,
+            15,
+            15,
+            255
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "15,15,15",
+          "sourceRgba": [
+            154,
+            80,
+            56,
+            255
+          ],
+          "targetRgba": [
+            15,
+            15,
+            15,
+            255
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "19,19,20",
+          "sourceRgba": [
+            167,
+            90,
+            64,
+            255
+          ],
+          "targetRgba": [
+            19,
+            19,
+            20,
+            255
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "24,24,26",
+          "sourceRgba": [
+            178,
+            98,
+            71,
+            255
+          ],
+          "targetRgba": [
+            24,
+            24,
+            26,
+            255
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "29,29,31",
+          "sourceRgba": [
+            194,
+            107,
+            76,
+            255
+          ],
+          "targetRgba": [
+            29,
+            29,
+            31,
+            255
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "33,33,37",
+          "sourceRgba": [
+            200,
+            116,
+            86,
+            255
+          ],
+          "targetRgba": [
+            33,
+            33,
+            37,
+            255
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "38,38,42",
+          "sourceRgba": [
+            214,
+            123,
+            91,
+            255
+          ],
+          "targetRgba": [
+            38,
+            38,
+            42,
+            255
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "43,43,48",
+          "sourceRgba": [
+            227,
+            130,
+            108,
+            255
+          ],
+          "targetRgba": [
+            43,
+            43,
+            48,
+            255
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "0,0,0",
+          "sourceRgba": [
+            61,
+            22,
+            30,
+            255
+          ],
+          "targetRgba": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "0,0,0",
+          "sourceRgba": [
+            91,
+            41,
+            36,
+            255
+          ],
+          "targetRgba": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ],
+      "approximatePalette": [
+        {
+          "source": "121,59,43",
+          "target": "0,0,0",
+          "sourceRgb": [
+            121,
+            59,
+            43
+          ],
+          "targetRgb": [
+            0,
+            0,
+            0
+          ],
+          "sourceOklch": [
+            0.4288737174503577,
+            0.09077324912002663,
+            35.51276833676762
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "15,15,15",
+          "sourceRgb": [
+            144,
+            73,
+            49
+          ],
+          "targetRgb": [
+            15,
+            15,
+            15
+          ],
+          "sourceOklch": [
+            0.48841052120708534,
+            0.10280391380885888,
+            39.19863889683775
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "15,15,15",
+          "sourceRgb": [
+            154,
+            80,
+            56
+          ],
+          "targetRgb": [
+            15,
+            15,
+            15
+          ],
+          "sourceOklch": [
+            0.5159759825262341,
+            0.10537939009259728,
+            38.6166383874286
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "19,19,20",
+          "sourceRgb": [
+            167,
+            90,
+            64
+          ],
+          "targetRgb": [
+            19,
+            19,
+            20
+          ],
+          "sourceOklch": [
+            0.5526836621834825,
+            0.108304746669396,
+            39.266689046485816
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "24,24,26",
+          "sourceRgb": [
+            178,
+            98,
+            71
+          ],
+          "targetRgb": [
+            24,
+            24,
+            26
+          ],
+          "sourceOklch": [
+            0.582597101523535,
+            0.11110298814951614,
+            39.2833830770644
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "29,29,31",
+          "sourceRgb": [
+            194,
+            107,
+            76
+          ],
+          "targetRgb": [
+            29,
+            29,
+            31
+          ],
+          "sourceOklch": [
+            0.6202256129145933,
+            0.1195986411936008,
+            40.14036135328441
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "33,33,37",
+          "sourceRgb": [
+            200,
+            116,
+            86
+          ],
+          "targetRgb": [
+            33,
+            33,
+            37
+          ],
+          "sourceOklch": [
+            0.6449748083437152,
+            0.11452245354933564,
+            40.26817611619824
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "38,38,42",
+          "sourceRgb": [
+            214,
+            123,
+            91
+          ],
+          "targetRgb": [
+            38,
+            38,
+            42
+          ],
+          "sourceOklch": [
+            0.6757300194090894,
+            0.12239305294326912,
+            39.99108609100801
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "43,43,48",
+          "sourceRgb": [
+            227,
+            130,
+            108
+          ],
+          "targetRgb": [
+            43,
+            43,
+            48
+          ],
+          "sourceOklch": [
+            0.7069693257093912,
+            0.1245286293753449,
+            33.73348693609524
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "0,0,0",
+          "sourceRgb": [
+            61,
+            22,
+            30
+          ],
+          "targetRgb": [
+            0,
+            0,
+            0
+          ],
+          "sourceOklch": [
+            0.262918383448369,
+            0.06177106506527718,
+            9.584114791939607
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "0,0,0",
+          "sourceRgb": [
+            91,
+            41,
+            36
+          ],
+          "targetRgb": [
+            0,
+            0,
+            0
+          ],
+          "sourceOklch": [
+            0.3487589070058929,
+            0.07459718343885835,
+            27.392957470915004
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ]
+    },
+    "blue": {
+      "unmatchedColor": {
+        "mode": "nearest",
+        "distanceMetric": "oklch",
+        "threshold": 0.1
+      },
+      "stats": {
+        "referencePairs": 2,
+        "sourceColors": 11
+      },
+      "sourceToTarget": [
+        {
+          "source": "121,59,43",
+          "target": "49,57,105",
+          "sourceRgba": [
+            121,
+            59,
+            43,
+            255
+          ],
+          "targetRgba": [
+            49,
+            57,
+            105,
+            255
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "49,57,105",
+          "sourceRgba": [
+            144,
+            73,
+            49,
+            255
+          ],
+          "targetRgba": [
+            49,
+            57,
+            105,
+            255
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "49,57,105",
+          "sourceRgba": [
+            154,
+            80,
+            56,
+            255
+          ],
+          "targetRgba": [
+            49,
+            57,
+            105,
+            255
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "51,65,119",
+          "sourceRgba": [
+            167,
+            90,
+            64,
+            255
+          ],
+          "targetRgba": [
+            51,
+            65,
+            119,
+            255
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "53,74,133",
+          "sourceRgba": [
+            178,
+            98,
+            71,
+            255
+          ],
+          "targetRgba": [
+            53,
+            74,
+            133,
+            255
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "55,83,147",
+          "sourceRgba": [
+            194,
+            107,
+            76,
+            255
+          ],
+          "targetRgba": [
+            55,
+            83,
+            147,
+            255
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "57,92,161",
+          "sourceRgba": [
+            200,
+            116,
+            86,
+            255
+          ],
+          "targetRgba": [
+            57,
+            92,
+            161,
+            255
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "59,101,175",
+          "sourceRgba": [
+            214,
+            123,
+            91,
+            255
+          ],
+          "targetRgba": [
+            59,
+            101,
+            175,
+            255
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "61,110,189",
+          "sourceRgba": [
+            227,
+            130,
+            108,
+            255
+          ],
+          "targetRgba": [
+            61,
+            110,
+            189,
+            255
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "49,57,105",
+          "sourceRgba": [
+            61,
+            22,
+            30,
+            255
+          ],
+          "targetRgba": [
+            49,
+            57,
+            105,
+            255
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "49,57,105",
+          "sourceRgba": [
+            91,
+            41,
+            36,
+            255
+          ],
+          "targetRgba": [
+            49,
+            57,
+            105,
+            255
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ],
+      "approximatePalette": [
+        {
+          "source": "121,59,43",
+          "target": "49,57,105",
+          "sourceRgb": [
+            121,
+            59,
+            43
+          ],
+          "targetRgb": [
+            49,
+            57,
+            105
+          ],
+          "sourceOklch": [
+            0.4288737174503577,
+            0.09077324912002663,
+            35.51276833676762
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "49,57,105",
+          "sourceRgb": [
+            144,
+            73,
+            49
+          ],
+          "targetRgb": [
+            49,
+            57,
+            105
+          ],
+          "sourceOklch": [
+            0.48841052120708534,
+            0.10280391380885888,
+            39.19863889683775
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "49,57,105",
+          "sourceRgb": [
+            154,
+            80,
+            56
+          ],
+          "targetRgb": [
+            49,
+            57,
+            105
+          ],
+          "sourceOklch": [
+            0.5159759825262341,
+            0.10537939009259728,
+            38.6166383874286
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "51,65,119",
+          "sourceRgb": [
+            167,
+            90,
+            64
+          ],
+          "targetRgb": [
+            51,
+            65,
+            119
+          ],
+          "sourceOklch": [
+            0.5526836621834825,
+            0.108304746669396,
+            39.266689046485816
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "53,74,133",
+          "sourceRgb": [
+            178,
+            98,
+            71
+          ],
+          "targetRgb": [
+            53,
+            74,
+            133
+          ],
+          "sourceOklch": [
+            0.582597101523535,
+            0.11110298814951614,
+            39.2833830770644
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "55,83,147",
+          "sourceRgb": [
+            194,
+            107,
+            76
+          ],
+          "targetRgb": [
+            55,
+            83,
+            147
+          ],
+          "sourceOklch": [
+            0.6202256129145933,
+            0.1195986411936008,
+            40.14036135328441
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "57,92,161",
+          "sourceRgb": [
+            200,
+            116,
+            86
+          ],
+          "targetRgb": [
+            57,
+            92,
+            161
+          ],
+          "sourceOklch": [
+            0.6449748083437152,
+            0.11452245354933564,
+            40.26817611619824
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "59,101,175",
+          "sourceRgb": [
+            214,
+            123,
+            91
+          ],
+          "targetRgb": [
+            59,
+            101,
+            175
+          ],
+          "sourceOklch": [
+            0.6757300194090894,
+            0.12239305294326912,
+            39.99108609100801
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "61,110,189",
+          "sourceRgb": [
+            227,
+            130,
+            108
+          ],
+          "targetRgb": [
+            61,
+            110,
+            189
+          ],
+          "sourceOklch": [
+            0.7069693257093912,
+            0.1245286293753449,
+            33.73348693609524
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "49,57,105",
+          "sourceRgb": [
+            61,
+            22,
+            30
+          ],
+          "targetRgb": [
+            49,
+            57,
+            105
+          ],
+          "sourceOklch": [
+            0.262918383448369,
+            0.06177106506527718,
+            9.584114791939607
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "49,57,105",
+          "sourceRgb": [
+            91,
+            41,
+            36
+          ],
+          "targetRgb": [
+            49,
+            57,
+            105
+          ],
+          "sourceOklch": [
+            0.3487589070058929,
+            0.07459718343885835,
+            27.392957470915004
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ]
+    },
+    "brown": {
+      "unmatchedColor": {
+        "mode": "nearest",
+        "distanceMetric": "oklch",
+        "threshold": 0.1
+      },
+      "stats": {
+        "referencePairs": 2,
+        "sourceColors": 11
+      },
+      "sourceToTarget": [
+        {
+          "source": "121,59,43",
+          "target": "63,44,34",
+          "sourceRgba": [
+            121,
+            59,
+            43,
+            255
+          ],
+          "targetRgba": [
+            63,
+            44,
+            34,
+            255
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "74,51,39",
+          "sourceRgba": [
+            144,
+            73,
+            49,
+            255
+          ],
+          "targetRgba": [
+            74,
+            51,
+            39,
+            255
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "74,51,39",
+          "sourceRgba": [
+            154,
+            80,
+            56,
+            255
+          ],
+          "targetRgba": [
+            74,
+            51,
+            39,
+            255
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "85,59,45",
+          "sourceRgba": [
+            167,
+            90,
+            64,
+            255
+          ],
+          "targetRgba": [
+            85,
+            59,
+            45,
+            255
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "97,67,50",
+          "sourceRgba": [
+            178,
+            98,
+            71,
+            255
+          ],
+          "targetRgba": [
+            97,
+            67,
+            50,
+            255
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "107,75,56",
+          "sourceRgba": [
+            194,
+            107,
+            76,
+            255
+          ],
+          "targetRgba": [
+            107,
+            75,
+            56,
+            255
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "119,83,61",
+          "sourceRgba": [
+            200,
+            116,
+            86,
+            255
+          ],
+          "targetRgba": [
+            119,
+            83,
+            61,
+            255
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "130,91,67",
+          "sourceRgba": [
+            214,
+            123,
+            91,
+            255
+          ],
+          "targetRgba": [
+            130,
+            91,
+            67,
+            255
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "142,99,72",
+          "sourceRgba": [
+            227,
+            130,
+            108,
+            255
+          ],
+          "targetRgba": [
+            142,
+            99,
+            72,
+            255
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "63,44,34",
+          "sourceRgba": [
+            61,
+            22,
+            30,
+            255
+          ],
+          "targetRgba": [
+            63,
+            44,
+            34,
+            255
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "63,44,34",
+          "sourceRgba": [
+            91,
+            41,
+            36,
+            255
+          ],
+          "targetRgba": [
+            63,
+            44,
+            34,
+            255
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ],
+      "approximatePalette": [
+        {
+          "source": "121,59,43",
+          "target": "63,44,34",
+          "sourceRgb": [
+            121,
+            59,
+            43
+          ],
+          "targetRgb": [
+            63,
+            44,
+            34
+          ],
+          "sourceOklch": [
+            0.4288737174503577,
+            0.09077324912002663,
+            35.51276833676762
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "74,51,39",
+          "sourceRgb": [
+            144,
+            73,
+            49
+          ],
+          "targetRgb": [
+            74,
+            51,
+            39
+          ],
+          "sourceOklch": [
+            0.48841052120708534,
+            0.10280391380885888,
+            39.19863889683775
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "74,51,39",
+          "sourceRgb": [
+            154,
+            80,
+            56
+          ],
+          "targetRgb": [
+            74,
+            51,
+            39
+          ],
+          "sourceOklch": [
+            0.5159759825262341,
+            0.10537939009259728,
+            38.6166383874286
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "85,59,45",
+          "sourceRgb": [
+            167,
+            90,
+            64
+          ],
+          "targetRgb": [
+            85,
+            59,
+            45
+          ],
+          "sourceOklch": [
+            0.5526836621834825,
+            0.108304746669396,
+            39.266689046485816
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "97,67,50",
+          "sourceRgb": [
+            178,
+            98,
+            71
+          ],
+          "targetRgb": [
+            97,
+            67,
+            50
+          ],
+          "sourceOklch": [
+            0.582597101523535,
+            0.11110298814951614,
+            39.2833830770644
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "107,75,56",
+          "sourceRgb": [
+            194,
+            107,
+            76
+          ],
+          "targetRgb": [
+            107,
+            75,
+            56
+          ],
+          "sourceOklch": [
+            0.6202256129145933,
+            0.1195986411936008,
+            40.14036135328441
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "119,83,61",
+          "sourceRgb": [
+            200,
+            116,
+            86
+          ],
+          "targetRgb": [
+            119,
+            83,
+            61
+          ],
+          "sourceOklch": [
+            0.6449748083437152,
+            0.11452245354933564,
+            40.26817611619824
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "130,91,67",
+          "sourceRgb": [
+            214,
+            123,
+            91
+          ],
+          "targetRgb": [
+            130,
+            91,
+            67
+          ],
+          "sourceOklch": [
+            0.6757300194090894,
+            0.12239305294326912,
+            39.99108609100801
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "142,99,72",
+          "sourceRgb": [
+            227,
+            130,
+            108
+          ],
+          "targetRgb": [
+            142,
+            99,
+            72
+          ],
+          "sourceOklch": [
+            0.7069693257093912,
+            0.1245286293753449,
+            33.73348693609524
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "63,44,34",
+          "sourceRgb": [
+            61,
+            22,
+            30
+          ],
+          "targetRgb": [
+            63,
+            44,
+            34
+          ],
+          "sourceOklch": [
+            0.262918383448369,
+            0.06177106506527718,
+            9.584114791939607
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "63,44,34",
+          "sourceRgb": [
+            91,
+            41,
+            36
+          ],
+          "targetRgb": [
+            63,
+            44,
+            34
+          ],
+          "sourceOklch": [
+            0.3487589070058929,
+            0.07459718343885835,
+            27.392957470915004
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ]
+    },
+    "cyan": {
+      "unmatchedColor": {
+        "mode": "nearest",
+        "distanceMetric": "oklch",
+        "threshold": 0.1
+      },
+      "stats": {
+        "referencePairs": 2,
+        "sourceColors": 11
+      },
+      "sourceToTarget": [
+        {
+          "source": "121,59,43",
+          "target": "17,81,90",
+          "sourceRgba": [
+            121,
+            59,
+            43,
+            255
+          ],
+          "targetRgba": [
+            17,
+            81,
+            90,
+            255
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "19,94,102",
+          "sourceRgba": [
+            144,
+            73,
+            49,
+            255
+          ],
+          "targetRgba": [
+            19,
+            94,
+            102,
+            255
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "19,94,102",
+          "sourceRgba": [
+            154,
+            80,
+            56,
+            255
+          ],
+          "targetRgba": [
+            19,
+            94,
+            102,
+            255
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "22,107,113",
+          "sourceRgba": [
+            167,
+            90,
+            64,
+            255
+          ],
+          "targetRgba": [
+            22,
+            107,
+            113,
+            255
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "24,121,126",
+          "sourceRgba": [
+            178,
+            98,
+            71,
+            255
+          ],
+          "targetRgba": [
+            24,
+            121,
+            126,
+            255
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "27,134,137",
+          "sourceRgba": [
+            194,
+            107,
+            76,
+            255
+          ],
+          "targetRgba": [
+            27,
+            134,
+            137,
+            255
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "29,148,150",
+          "sourceRgba": [
+            200,
+            116,
+            86,
+            255
+          ],
+          "targetRgba": [
+            29,
+            148,
+            150,
+            255
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "31,161,162",
+          "sourceRgba": [
+            214,
+            123,
+            91,
+            255
+          ],
+          "targetRgba": [
+            31,
+            161,
+            162,
+            255
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "34,175,175",
+          "sourceRgba": [
+            227,
+            130,
+            108,
+            255
+          ],
+          "targetRgba": [
+            34,
+            175,
+            175,
+            255
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "17,81,90",
+          "sourceRgba": [
+            61,
+            22,
+            30,
+            255
+          ],
+          "targetRgba": [
+            17,
+            81,
+            90,
+            255
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "17,81,90",
+          "sourceRgba": [
+            91,
+            41,
+            36,
+            255
+          ],
+          "targetRgba": [
+            17,
+            81,
+            90,
+            255
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ],
+      "approximatePalette": [
+        {
+          "source": "121,59,43",
+          "target": "17,81,90",
+          "sourceRgb": [
+            121,
+            59,
+            43
+          ],
+          "targetRgb": [
+            17,
+            81,
+            90
+          ],
+          "sourceOklch": [
+            0.4288737174503577,
+            0.09077324912002663,
+            35.51276833676762
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "19,94,102",
+          "sourceRgb": [
+            144,
+            73,
+            49
+          ],
+          "targetRgb": [
+            19,
+            94,
+            102
+          ],
+          "sourceOklch": [
+            0.48841052120708534,
+            0.10280391380885888,
+            39.19863889683775
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "19,94,102",
+          "sourceRgb": [
+            154,
+            80,
+            56
+          ],
+          "targetRgb": [
+            19,
+            94,
+            102
+          ],
+          "sourceOklch": [
+            0.5159759825262341,
+            0.10537939009259728,
+            38.6166383874286
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "22,107,113",
+          "sourceRgb": [
+            167,
+            90,
+            64
+          ],
+          "targetRgb": [
+            22,
+            107,
+            113
+          ],
+          "sourceOklch": [
+            0.5526836621834825,
+            0.108304746669396,
+            39.266689046485816
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "24,121,126",
+          "sourceRgb": [
+            178,
+            98,
+            71
+          ],
+          "targetRgb": [
+            24,
+            121,
+            126
+          ],
+          "sourceOklch": [
+            0.582597101523535,
+            0.11110298814951614,
+            39.2833830770644
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "27,134,137",
+          "sourceRgb": [
+            194,
+            107,
+            76
+          ],
+          "targetRgb": [
+            27,
+            134,
+            137
+          ],
+          "sourceOklch": [
+            0.6202256129145933,
+            0.1195986411936008,
+            40.14036135328441
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "29,148,150",
+          "sourceRgb": [
+            200,
+            116,
+            86
+          ],
+          "targetRgb": [
+            29,
+            148,
+            150
+          ],
+          "sourceOklch": [
+            0.6449748083437152,
+            0.11452245354933564,
+            40.26817611619824
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "31,161,162",
+          "sourceRgb": [
+            214,
+            123,
+            91
+          ],
+          "targetRgb": [
+            31,
+            161,
+            162
+          ],
+          "sourceOklch": [
+            0.6757300194090894,
+            0.12239305294326912,
+            39.99108609100801
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "34,175,175",
+          "sourceRgb": [
+            227,
+            130,
+            108
+          ],
+          "targetRgb": [
+            34,
+            175,
+            175
+          ],
+          "sourceOklch": [
+            0.7069693257093912,
+            0.1245286293753449,
+            33.73348693609524
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "17,81,90",
+          "sourceRgb": [
+            61,
+            22,
+            30
+          ],
+          "targetRgb": [
+            17,
+            81,
+            90
+          ],
+          "sourceOklch": [
+            0.262918383448369,
+            0.06177106506527718,
+            9.584114791939607
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "17,81,90",
+          "sourceRgb": [
+            91,
+            41,
+            36
+          ],
+          "targetRgb": [
+            17,
+            81,
+            90
+          ],
+          "sourceOklch": [
+            0.3487589070058929,
+            0.07459718343885835,
+            27.392957470915004
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ]
+    },
+    "gray": {
+      "unmatchedColor": {
+        "mode": "nearest",
+        "distanceMetric": "oklch",
+        "threshold": 0.1
+      },
+      "stats": {
+        "referencePairs": 2,
+        "sourceColors": 11
+      },
+      "sourceToTarget": [
+        {
+          "source": "121,59,43",
+          "target": "38,46,49",
+          "sourceRgba": [
+            121,
+            59,
+            43,
+            255
+          ],
+          "targetRgba": [
+            38,
+            46,
+            49,
+            255
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "43,51,54",
+          "sourceRgba": [
+            144,
+            73,
+            49,
+            255
+          ],
+          "targetRgba": [
+            43,
+            51,
+            54,
+            255
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "43,51,54",
+          "sourceRgba": [
+            154,
+            80,
+            56,
+            255
+          ],
+          "targetRgba": [
+            43,
+            51,
+            54,
+            255
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "48,57,60",
+          "sourceRgba": [
+            167,
+            90,
+            64,
+            255
+          ],
+          "targetRgba": [
+            48,
+            57,
+            60,
+            255
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "53,62,66",
+          "sourceRgba": [
+            178,
+            98,
+            71,
+            255
+          ],
+          "targetRgba": [
+            53,
+            62,
+            66,
+            255
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "58,68,72",
+          "sourceRgba": [
+            194,
+            107,
+            76,
+            255
+          ],
+          "targetRgba": [
+            58,
+            68,
+            72,
+            255
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "63,73,78",
+          "sourceRgba": [
+            200,
+            116,
+            86,
+            255
+          ],
+          "targetRgba": [
+            63,
+            73,
+            78,
+            255
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "68,79,84",
+          "sourceRgba": [
+            214,
+            123,
+            91,
+            255
+          ],
+          "targetRgba": [
+            68,
+            79,
+            84,
+            255
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "74,85,90",
+          "sourceRgba": [
+            227,
+            130,
+            108,
+            255
+          ],
+          "targetRgba": [
+            74,
+            85,
+            90,
+            255
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "38,46,49",
+          "sourceRgba": [
+            61,
+            22,
+            30,
+            255
+          ],
+          "targetRgba": [
+            38,
+            46,
+            49,
+            255
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "38,46,49",
+          "sourceRgba": [
+            91,
+            41,
+            36,
+            255
+          ],
+          "targetRgba": [
+            38,
+            46,
+            49,
+            255
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ],
+      "approximatePalette": [
+        {
+          "source": "121,59,43",
+          "target": "38,46,49",
+          "sourceRgb": [
+            121,
+            59,
+            43
+          ],
+          "targetRgb": [
+            38,
+            46,
+            49
+          ],
+          "sourceOklch": [
+            0.4288737174503577,
+            0.09077324912002663,
+            35.51276833676762
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "43,51,54",
+          "sourceRgb": [
+            144,
+            73,
+            49
+          ],
+          "targetRgb": [
+            43,
+            51,
+            54
+          ],
+          "sourceOklch": [
+            0.48841052120708534,
+            0.10280391380885888,
+            39.19863889683775
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "43,51,54",
+          "sourceRgb": [
+            154,
+            80,
+            56
+          ],
+          "targetRgb": [
+            43,
+            51,
+            54
+          ],
+          "sourceOklch": [
+            0.5159759825262341,
+            0.10537939009259728,
+            38.6166383874286
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "48,57,60",
+          "sourceRgb": [
+            167,
+            90,
+            64
+          ],
+          "targetRgb": [
+            48,
+            57,
+            60
+          ],
+          "sourceOklch": [
+            0.5526836621834825,
+            0.108304746669396,
+            39.266689046485816
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "53,62,66",
+          "sourceRgb": [
+            178,
+            98,
+            71
+          ],
+          "targetRgb": [
+            53,
+            62,
+            66
+          ],
+          "sourceOklch": [
+            0.582597101523535,
+            0.11110298814951614,
+            39.2833830770644
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "58,68,72",
+          "sourceRgb": [
+            194,
+            107,
+            76
+          ],
+          "targetRgb": [
+            58,
+            68,
+            72
+          ],
+          "sourceOklch": [
+            0.6202256129145933,
+            0.1195986411936008,
+            40.14036135328441
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "63,73,78",
+          "sourceRgb": [
+            200,
+            116,
+            86
+          ],
+          "targetRgb": [
+            63,
+            73,
+            78
+          ],
+          "sourceOklch": [
+            0.6449748083437152,
+            0.11452245354933564,
+            40.26817611619824
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "68,79,84",
+          "sourceRgb": [
+            214,
+            123,
+            91
+          ],
+          "targetRgb": [
+            68,
+            79,
+            84
+          ],
+          "sourceOklch": [
+            0.6757300194090894,
+            0.12239305294326912,
+            39.99108609100801
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "74,85,90",
+          "sourceRgb": [
+            227,
+            130,
+            108
+          ],
+          "targetRgb": [
+            74,
+            85,
+            90
+          ],
+          "sourceOklch": [
+            0.7069693257093912,
+            0.1245286293753449,
+            33.73348693609524
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "38,46,49",
+          "sourceRgb": [
+            61,
+            22,
+            30
+          ],
+          "targetRgb": [
+            38,
+            46,
+            49
+          ],
+          "sourceOklch": [
+            0.262918383448369,
+            0.06177106506527718,
+            9.584114791939607
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "38,46,49",
+          "sourceRgb": [
+            91,
+            41,
+            36
+          ],
+          "targetRgb": [
+            38,
+            46,
+            49
+          ],
+          "sourceOklch": [
+            0.3487589070058929,
+            0.07459718343885835,
+            27.392957470915004
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ]
+    },
+    "green": {
+      "unmatchedColor": {
+        "mode": "nearest",
+        "distanceMetric": "oklch",
+        "threshold": 0.1
+      },
+      "stats": {
+        "referencePairs": 2,
+        "sourceColors": 11
+      },
+      "sourceToTarget": [
+        {
+          "source": "121,59,43",
+          "target": "22,69,40",
+          "sourceRgba": [
+            121,
+            59,
+            43,
+            255
+          ],
+          "targetRgba": [
+            22,
+            69,
+            40,
+            255
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "24,77,42",
+          "sourceRgba": [
+            144,
+            73,
+            49,
+            255
+          ],
+          "targetRgba": [
+            24,
+            77,
+            42,
+            255
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "24,77,42",
+          "sourceRgba": [
+            154,
+            80,
+            56,
+            255
+          ],
+          "targetRgba": [
+            24,
+            77,
+            42,
+            255
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "25,87,46",
+          "sourceRgba": [
+            167,
+            90,
+            64,
+            255
+          ],
+          "targetRgba": [
+            25,
+            87,
+            46,
+            255
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "27,96,49",
+          "sourceRgba": [
+            178,
+            98,
+            71,
+            255
+          ],
+          "targetRgba": [
+            27,
+            96,
+            49,
+            255
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "29,105,53",
+          "sourceRgba": [
+            194,
+            107,
+            76,
+            255
+          ],
+          "targetRgba": [
+            29,
+            105,
+            53,
+            255
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "30,115,56",
+          "sourceRgba": [
+            200,
+            116,
+            86,
+            255
+          ],
+          "targetRgba": [
+            30,
+            115,
+            56,
+            255
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "32,124,59",
+          "sourceRgba": [
+            214,
+            123,
+            91,
+            255
+          ],
+          "targetRgba": [
+            32,
+            124,
+            59,
+            255
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "35,133,63",
+          "sourceRgba": [
+            227,
+            130,
+            108,
+            255
+          ],
+          "targetRgba": [
+            35,
+            133,
+            63,
+            255
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "22,69,40",
+          "sourceRgba": [
+            61,
+            22,
+            30,
+            255
+          ],
+          "targetRgba": [
+            22,
+            69,
+            40,
+            255
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "22,69,40",
+          "sourceRgba": [
+            91,
+            41,
+            36,
+            255
+          ],
+          "targetRgba": [
+            22,
+            69,
+            40,
+            255
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ],
+      "approximatePalette": [
+        {
+          "source": "121,59,43",
+          "target": "22,69,40",
+          "sourceRgb": [
+            121,
+            59,
+            43
+          ],
+          "targetRgb": [
+            22,
+            69,
+            40
+          ],
+          "sourceOklch": [
+            0.4288737174503577,
+            0.09077324912002663,
+            35.51276833676762
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "24,77,42",
+          "sourceRgb": [
+            144,
+            73,
+            49
+          ],
+          "targetRgb": [
+            24,
+            77,
+            42
+          ],
+          "sourceOklch": [
+            0.48841052120708534,
+            0.10280391380885888,
+            39.19863889683775
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "24,77,42",
+          "sourceRgb": [
+            154,
+            80,
+            56
+          ],
+          "targetRgb": [
+            24,
+            77,
+            42
+          ],
+          "sourceOklch": [
+            0.5159759825262341,
+            0.10537939009259728,
+            38.6166383874286
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "25,87,46",
+          "sourceRgb": [
+            167,
+            90,
+            64
+          ],
+          "targetRgb": [
+            25,
+            87,
+            46
+          ],
+          "sourceOklch": [
+            0.5526836621834825,
+            0.108304746669396,
+            39.266689046485816
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "27,96,49",
+          "sourceRgb": [
+            178,
+            98,
+            71
+          ],
+          "targetRgb": [
+            27,
+            96,
+            49
+          ],
+          "sourceOklch": [
+            0.582597101523535,
+            0.11110298814951614,
+            39.2833830770644
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "29,105,53",
+          "sourceRgb": [
+            194,
+            107,
+            76
+          ],
+          "targetRgb": [
+            29,
+            105,
+            53
+          ],
+          "sourceOklch": [
+            0.6202256129145933,
+            0.1195986411936008,
+            40.14036135328441
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "30,115,56",
+          "sourceRgb": [
+            200,
+            116,
+            86
+          ],
+          "targetRgb": [
+            30,
+            115,
+            56
+          ],
+          "sourceOklch": [
+            0.6449748083437152,
+            0.11452245354933564,
+            40.26817611619824
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "32,124,59",
+          "sourceRgb": [
+            214,
+            123,
+            91
+          ],
+          "targetRgb": [
+            32,
+            124,
+            59
+          ],
+          "sourceOklch": [
+            0.6757300194090894,
+            0.12239305294326912,
+            39.99108609100801
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "35,133,63",
+          "sourceRgb": [
+            227,
+            130,
+            108
+          ],
+          "targetRgb": [
+            35,
+            133,
+            63
+          ],
+          "sourceOklch": [
+            0.7069693257093912,
+            0.1245286293753449,
+            33.73348693609524
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "22,69,40",
+          "sourceRgb": [
+            61,
+            22,
+            30
+          ],
+          "targetRgb": [
+            22,
+            69,
+            40
+          ],
+          "sourceOklch": [
+            0.262918383448369,
+            0.06177106506527718,
+            9.584114791939607
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "22,69,40",
+          "sourceRgb": [
+            91,
+            41,
+            36
+          ],
+          "targetRgb": [
+            22,
+            69,
+            40
+          ],
+          "sourceOklch": [
+            0.3487589070058929,
+            0.07459718343885835,
+            27.392957470915004
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ]
+    },
+    "light_blue": {
+      "unmatchedColor": {
+        "mode": "nearest",
+        "distanceMetric": "oklch",
+        "threshold": 0.1
+      },
+      "stats": {
+        "referencePairs": 2,
+        "sourceColors": 11
+      },
+      "sourceToTarget": [
+        {
+          "source": "121,59,43",
+          "target": "49,100,119",
+          "sourceRgba": [
+            121,
+            59,
+            43,
+            255
+          ],
+          "targetRgba": [
+            49,
+            100,
+            119,
+            255
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "51,113,131",
+          "sourceRgba": [
+            144,
+            73,
+            49,
+            255
+          ],
+          "targetRgba": [
+            51,
+            113,
+            131,
+            255
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "51,113,131",
+          "sourceRgba": [
+            154,
+            80,
+            56,
+            255
+          ],
+          "targetRgba": [
+            51,
+            113,
+            131,
+            255
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "54,126,144",
+          "sourceRgba": [
+            167,
+            90,
+            64,
+            255
+          ],
+          "targetRgba": [
+            54,
+            126,
+            144,
+            255
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "57,139,156",
+          "sourceRgba": [
+            178,
+            98,
+            71,
+            255
+          ],
+          "targetRgba": [
+            57,
+            139,
+            156,
+            255
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "60,152,169",
+          "sourceRgba": [
+            194,
+            107,
+            76,
+            255
+          ],
+          "targetRgba": [
+            60,
+            152,
+            169,
+            255
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "63,165,182",
+          "sourceRgba": [
+            200,
+            116,
+            86,
+            255
+          ],
+          "targetRgba": [
+            63,
+            165,
+            182,
+            255
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "65,178,195",
+          "sourceRgba": [
+            214,
+            123,
+            91,
+            255
+          ],
+          "targetRgba": [
+            65,
+            178,
+            195,
+            255
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "68,192,208",
+          "sourceRgba": [
+            227,
+            130,
+            108,
+            255
+          ],
+          "targetRgba": [
+            68,
+            192,
+            208,
+            255
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "49,100,119",
+          "sourceRgba": [
+            61,
+            22,
+            30,
+            255
+          ],
+          "targetRgba": [
+            49,
+            100,
+            119,
+            255
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "49,100,119",
+          "sourceRgba": [
+            91,
+            41,
+            36,
+            255
+          ],
+          "targetRgba": [
+            49,
+            100,
+            119,
+            255
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ],
+      "approximatePalette": [
+        {
+          "source": "121,59,43",
+          "target": "49,100,119",
+          "sourceRgb": [
+            121,
+            59,
+            43
+          ],
+          "targetRgb": [
+            49,
+            100,
+            119
+          ],
+          "sourceOklch": [
+            0.4288737174503577,
+            0.09077324912002663,
+            35.51276833676762
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "51,113,131",
+          "sourceRgb": [
+            144,
+            73,
+            49
+          ],
+          "targetRgb": [
+            51,
+            113,
+            131
+          ],
+          "sourceOklch": [
+            0.48841052120708534,
+            0.10280391380885888,
+            39.19863889683775
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "51,113,131",
+          "sourceRgb": [
+            154,
+            80,
+            56
+          ],
+          "targetRgb": [
+            51,
+            113,
+            131
+          ],
+          "sourceOklch": [
+            0.5159759825262341,
+            0.10537939009259728,
+            38.6166383874286
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "54,126,144",
+          "sourceRgb": [
+            167,
+            90,
+            64
+          ],
+          "targetRgb": [
+            54,
+            126,
+            144
+          ],
+          "sourceOklch": [
+            0.5526836621834825,
+            0.108304746669396,
+            39.266689046485816
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "57,139,156",
+          "sourceRgb": [
+            178,
+            98,
+            71
+          ],
+          "targetRgb": [
+            57,
+            139,
+            156
+          ],
+          "sourceOklch": [
+            0.582597101523535,
+            0.11110298814951614,
+            39.2833830770644
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "60,152,169",
+          "sourceRgb": [
+            194,
+            107,
+            76
+          ],
+          "targetRgb": [
+            60,
+            152,
+            169
+          ],
+          "sourceOklch": [
+            0.6202256129145933,
+            0.1195986411936008,
+            40.14036135328441
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "63,165,182",
+          "sourceRgb": [
+            200,
+            116,
+            86
+          ],
+          "targetRgb": [
+            63,
+            165,
+            182
+          ],
+          "sourceOklch": [
+            0.6449748083437152,
+            0.11452245354933564,
+            40.26817611619824
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "65,178,195",
+          "sourceRgb": [
+            214,
+            123,
+            91
+          ],
+          "targetRgb": [
+            65,
+            178,
+            195
+          ],
+          "sourceOklch": [
+            0.6757300194090894,
+            0.12239305294326912,
+            39.99108609100801
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "68,192,208",
+          "sourceRgb": [
+            227,
+            130,
+            108
+          ],
+          "targetRgb": [
+            68,
+            192,
+            208
+          ],
+          "sourceOklch": [
+            0.7069693257093912,
+            0.1245286293753449,
+            33.73348693609524
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "49,100,119",
+          "sourceRgb": [
+            61,
+            22,
+            30
+          ],
+          "targetRgb": [
+            49,
+            100,
+            119
+          ],
+          "sourceOklch": [
+            0.262918383448369,
+            0.06177106506527718,
+            9.584114791939607
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "49,100,119",
+          "sourceRgb": [
+            91,
+            41,
+            36
+          ],
+          "targetRgb": [
+            49,
+            100,
+            119
+          ],
+          "sourceOklch": [
+            0.3487589070058929,
+            0.07459718343885835,
+            27.392957470915004
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ]
+    },
+    "light_gray": {
+      "unmatchedColor": {
+        "mode": "nearest",
+        "distanceMetric": "oklch",
+        "threshold": 0.1
+      },
+      "stats": {
+        "referencePairs": 2,
+        "sourceColors": 11
+      },
+      "sourceToTarget": [
+        {
+          "source": "121,59,43",
+          "target": "89,89,89",
+          "sourceRgba": [
+            121,
+            59,
+            43,
+            255
+          ],
+          "targetRgba": [
+            89,
+            89,
+            89,
+            255
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "99,99,97",
+          "sourceRgba": [
+            144,
+            73,
+            49,
+            255
+          ],
+          "targetRgba": [
+            99,
+            99,
+            97,
+            255
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "99,99,97",
+          "sourceRgba": [
+            154,
+            80,
+            56,
+            255
+          ],
+          "targetRgba": [
+            99,
+            99,
+            97,
+            255
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "109,109,105",
+          "sourceRgba": [
+            167,
+            90,
+            64,
+            255
+          ],
+          "targetRgba": [
+            109,
+            109,
+            105,
+            255
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "119,119,113",
+          "sourceRgba": [
+            178,
+            98,
+            71,
+            255
+          ],
+          "targetRgba": [
+            119,
+            119,
+            113,
+            255
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "128,128,123",
+          "sourceRgba": [
+            194,
+            107,
+            76,
+            255
+          ],
+          "targetRgba": [
+            128,
+            128,
+            123,
+            255
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "138,138,131",
+          "sourceRgba": [
+            200,
+            116,
+            86,
+            255
+          ],
+          "targetRgba": [
+            138,
+            138,
+            131,
+            255
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "148,148,139",
+          "sourceRgba": [
+            214,
+            123,
+            91,
+            255
+          ],
+          "targetRgba": [
+            148,
+            148,
+            139,
+            255
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "158,158,148",
+          "sourceRgba": [
+            227,
+            130,
+            108,
+            255
+          ],
+          "targetRgba": [
+            158,
+            158,
+            148,
+            255
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "89,89,89",
+          "sourceRgba": [
+            61,
+            22,
+            30,
+            255
+          ],
+          "targetRgba": [
+            89,
+            89,
+            89,
+            255
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "89,89,89",
+          "sourceRgba": [
+            91,
+            41,
+            36,
+            255
+          ],
+          "targetRgba": [
+            89,
+            89,
+            89,
+            255
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ],
+      "approximatePalette": [
+        {
+          "source": "121,59,43",
+          "target": "89,89,89",
+          "sourceRgb": [
+            121,
+            59,
+            43
+          ],
+          "targetRgb": [
+            89,
+            89,
+            89
+          ],
+          "sourceOklch": [
+            0.4288737174503577,
+            0.09077324912002663,
+            35.51276833676762
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "99,99,97",
+          "sourceRgb": [
+            144,
+            73,
+            49
+          ],
+          "targetRgb": [
+            99,
+            99,
+            97
+          ],
+          "sourceOklch": [
+            0.48841052120708534,
+            0.10280391380885888,
+            39.19863889683775
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "99,99,97",
+          "sourceRgb": [
+            154,
+            80,
+            56
+          ],
+          "targetRgb": [
+            99,
+            99,
+            97
+          ],
+          "sourceOklch": [
+            0.5159759825262341,
+            0.10537939009259728,
+            38.6166383874286
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "109,109,105",
+          "sourceRgb": [
+            167,
+            90,
+            64
+          ],
+          "targetRgb": [
+            109,
+            109,
+            105
+          ],
+          "sourceOklch": [
+            0.5526836621834825,
+            0.108304746669396,
+            39.266689046485816
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "119,119,113",
+          "sourceRgb": [
+            178,
+            98,
+            71
+          ],
+          "targetRgb": [
+            119,
+            119,
+            113
+          ],
+          "sourceOklch": [
+            0.582597101523535,
+            0.11110298814951614,
+            39.2833830770644
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "128,128,123",
+          "sourceRgb": [
+            194,
+            107,
+            76
+          ],
+          "targetRgb": [
+            128,
+            128,
+            123
+          ],
+          "sourceOklch": [
+            0.6202256129145933,
+            0.1195986411936008,
+            40.14036135328441
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "138,138,131",
+          "sourceRgb": [
+            200,
+            116,
+            86
+          ],
+          "targetRgb": [
+            138,
+            138,
+            131
+          ],
+          "sourceOklch": [
+            0.6449748083437152,
+            0.11452245354933564,
+            40.26817611619824
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "148,148,139",
+          "sourceRgb": [
+            214,
+            123,
+            91
+          ],
+          "targetRgb": [
+            148,
+            148,
+            139
+          ],
+          "sourceOklch": [
+            0.6757300194090894,
+            0.12239305294326912,
+            39.99108609100801
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "158,158,148",
+          "sourceRgb": [
+            227,
+            130,
+            108
+          ],
+          "targetRgb": [
+            158,
+            158,
+            148
+          ],
+          "sourceOklch": [
+            0.7069693257093912,
+            0.1245286293753449,
+            33.73348693609524
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "89,89,89",
+          "sourceRgb": [
+            61,
+            22,
+            30
+          ],
+          "targetRgb": [
+            89,
+            89,
+            89
+          ],
+          "sourceOklch": [
+            0.262918383448369,
+            0.06177106506527718,
+            9.584114791939607
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "89,89,89",
+          "sourceRgb": [
+            91,
+            41,
+            36
+          ],
+          "targetRgb": [
+            89,
+            89,
+            89
+          ],
+          "sourceOklch": [
+            0.3487589070058929,
+            0.07459718343885835,
+            27.392957470915004
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ]
+    },
+    "lime": {
+      "unmatchedColor": {
+        "mode": "nearest",
+        "distanceMetric": "oklch",
+        "threshold": 0.1
+      },
+      "stats": {
+        "referencePairs": 2,
+        "sourceColors": 11
+      },
+      "sourceToTarget": [
+        {
+          "source": "121,59,43",
+          "target": "54,114,29",
+          "sourceRgba": [
+            121,
+            59,
+            43,
+            255
+          ],
+          "targetRgba": [
+            54,
+            114,
+            29,
+            255
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "61,125,31",
+          "sourceRgba": [
+            144,
+            73,
+            49,
+            255
+          ],
+          "targetRgba": [
+            61,
+            125,
+            31,
+            255
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "61,125,31",
+          "sourceRgba": [
+            154,
+            80,
+            56,
+            255
+          ],
+          "targetRgba": [
+            61,
+            125,
+            31,
+            255
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "68,136,34",
+          "sourceRgba": [
+            167,
+            90,
+            64,
+            255
+          ],
+          "targetRgba": [
+            68,
+            136,
+            34,
+            255
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "75,147,37",
+          "sourceRgba": [
+            178,
+            98,
+            71,
+            255
+          ],
+          "targetRgba": [
+            75,
+            147,
+            37,
+            255
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "82,158,39",
+          "sourceRgba": [
+            194,
+            107,
+            76,
+            255
+          ],
+          "targetRgba": [
+            82,
+            158,
+            39,
+            255
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "89,169,42",
+          "sourceRgba": [
+            200,
+            116,
+            86,
+            255
+          ],
+          "targetRgba": [
+            89,
+            169,
+            42,
+            255
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "96,180,45",
+          "sourceRgba": [
+            214,
+            123,
+            91,
+            255
+          ],
+          "targetRgba": [
+            96,
+            180,
+            45,
+            255
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "103,191,49",
+          "sourceRgba": [
+            227,
+            130,
+            108,
+            255
+          ],
+          "targetRgba": [
+            103,
+            191,
+            49,
+            255
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "54,114,29",
+          "sourceRgba": [
+            61,
+            22,
+            30,
+            255
+          ],
+          "targetRgba": [
+            54,
+            114,
+            29,
+            255
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "54,114,29",
+          "sourceRgba": [
+            91,
+            41,
+            36,
+            255
+          ],
+          "targetRgba": [
+            54,
+            114,
+            29,
+            255
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ],
+      "approximatePalette": [
+        {
+          "source": "121,59,43",
+          "target": "54,114,29",
+          "sourceRgb": [
+            121,
+            59,
+            43
+          ],
+          "targetRgb": [
+            54,
+            114,
+            29
+          ],
+          "sourceOklch": [
+            0.4288737174503577,
+            0.09077324912002663,
+            35.51276833676762
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "61,125,31",
+          "sourceRgb": [
+            144,
+            73,
+            49
+          ],
+          "targetRgb": [
+            61,
+            125,
+            31
+          ],
+          "sourceOklch": [
+            0.48841052120708534,
+            0.10280391380885888,
+            39.19863889683775
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "61,125,31",
+          "sourceRgb": [
+            154,
+            80,
+            56
+          ],
+          "targetRgb": [
+            61,
+            125,
+            31
+          ],
+          "sourceOklch": [
+            0.5159759825262341,
+            0.10537939009259728,
+            38.6166383874286
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "68,136,34",
+          "sourceRgb": [
+            167,
+            90,
+            64
+          ],
+          "targetRgb": [
+            68,
+            136,
+            34
+          ],
+          "sourceOklch": [
+            0.5526836621834825,
+            0.108304746669396,
+            39.266689046485816
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "75,147,37",
+          "sourceRgb": [
+            178,
+            98,
+            71
+          ],
+          "targetRgb": [
+            75,
+            147,
+            37
+          ],
+          "sourceOklch": [
+            0.582597101523535,
+            0.11110298814951614,
+            39.2833830770644
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "82,158,39",
+          "sourceRgb": [
+            194,
+            107,
+            76
+          ],
+          "targetRgb": [
+            82,
+            158,
+            39
+          ],
+          "sourceOklch": [
+            0.6202256129145933,
+            0.1195986411936008,
+            40.14036135328441
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "89,169,42",
+          "sourceRgb": [
+            200,
+            116,
+            86
+          ],
+          "targetRgb": [
+            89,
+            169,
+            42
+          ],
+          "sourceOklch": [
+            0.6449748083437152,
+            0.11452245354933564,
+            40.26817611619824
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "96,180,45",
+          "sourceRgb": [
+            214,
+            123,
+            91
+          ],
+          "targetRgb": [
+            96,
+            180,
+            45
+          ],
+          "sourceOklch": [
+            0.6757300194090894,
+            0.12239305294326912,
+            39.99108609100801
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "103,191,49",
+          "sourceRgb": [
+            227,
+            130,
+            108
+          ],
+          "targetRgb": [
+            103,
+            191,
+            49
+          ],
+          "sourceOklch": [
+            0.7069693257093912,
+            0.1245286293753449,
+            33.73348693609524
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "54,114,29",
+          "sourceRgb": [
+            61,
+            22,
+            30
+          ],
+          "targetRgb": [
+            54,
+            114,
+            29
+          ],
+          "sourceOklch": [
+            0.262918383448369,
+            0.06177106506527718,
+            9.584114791939607
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "54,114,29",
+          "sourceRgb": [
+            91,
+            41,
+            36
+          ],
+          "targetRgb": [
+            54,
+            114,
+            29
+          ],
+          "sourceOklch": [
+            0.3487589070058929,
+            0.07459718343885835,
+            27.392957470915004
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ]
+    },
+    "magenta": {
+      "unmatchedColor": {
+        "mode": "nearest",
+        "distanceMetric": "oklch",
+        "threshold": 0.1
+      },
+      "stats": {
+        "referencePairs": 2,
+        "sourceColors": 11
+      },
+      "sourceToTarget": [
+        {
+          "source": "121,59,43",
+          "target": "131,58,103",
+          "sourceRgba": [
+            121,
+            59,
+            43,
+            255
+          ],
+          "targetRgba": [
+            131,
+            58,
+            103,
+            255
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "144,64,114",
+          "sourceRgba": [
+            144,
+            73,
+            49,
+            255
+          ],
+          "targetRgba": [
+            144,
+            64,
+            114,
+            255
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "144,64,114",
+          "sourceRgba": [
+            154,
+            80,
+            56,
+            255
+          ],
+          "targetRgba": [
+            144,
+            64,
+            114,
+            255
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "157,71,127",
+          "sourceRgba": [
+            167,
+            90,
+            64,
+            255
+          ],
+          "targetRgba": [
+            157,
+            71,
+            127,
+            255
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "171,77,139",
+          "sourceRgba": [
+            178,
+            98,
+            71,
+            255
+          ],
+          "targetRgba": [
+            171,
+            77,
+            139,
+            255
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "183,84,152",
+          "sourceRgba": [
+            194,
+            107,
+            76,
+            255
+          ],
+          "targetRgba": [
+            183,
+            84,
+            152,
+            255
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "197,90,164",
+          "sourceRgba": [
+            200,
+            116,
+            86,
+            255
+          ],
+          "targetRgba": [
+            197,
+            90,
+            164,
+            255
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "210,97,177",
+          "sourceRgba": [
+            214,
+            123,
+            91,
+            255
+          ],
+          "targetRgba": [
+            210,
+            97,
+            177,
+            255
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "223,104,189",
+          "sourceRgba": [
+            227,
+            130,
+            108,
+            255
+          ],
+          "targetRgba": [
+            223,
+            104,
+            189,
+            255
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "131,58,103",
+          "sourceRgba": [
+            61,
+            22,
+            30,
+            255
+          ],
+          "targetRgba": [
+            131,
+            58,
+            103,
+            255
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "131,58,103",
+          "sourceRgba": [
+            91,
+            41,
+            36,
+            255
+          ],
+          "targetRgba": [
+            131,
+            58,
+            103,
+            255
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ],
+      "approximatePalette": [
+        {
+          "source": "121,59,43",
+          "target": "131,58,103",
+          "sourceRgb": [
+            121,
+            59,
+            43
+          ],
+          "targetRgb": [
+            131,
+            58,
+            103
+          ],
+          "sourceOklch": [
+            0.4288737174503577,
+            0.09077324912002663,
+            35.51276833676762
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "144,64,114",
+          "sourceRgb": [
+            144,
+            73,
+            49
+          ],
+          "targetRgb": [
+            144,
+            64,
+            114
+          ],
+          "sourceOklch": [
+            0.48841052120708534,
+            0.10280391380885888,
+            39.19863889683775
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "144,64,114",
+          "sourceRgb": [
+            154,
+            80,
+            56
+          ],
+          "targetRgb": [
+            144,
+            64,
+            114
+          ],
+          "sourceOklch": [
+            0.5159759825262341,
+            0.10537939009259728,
+            38.6166383874286
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "157,71,127",
+          "sourceRgb": [
+            167,
+            90,
+            64
+          ],
+          "targetRgb": [
+            157,
+            71,
+            127
+          ],
+          "sourceOklch": [
+            0.5526836621834825,
+            0.108304746669396,
+            39.266689046485816
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "171,77,139",
+          "sourceRgb": [
+            178,
+            98,
+            71
+          ],
+          "targetRgb": [
+            171,
+            77,
+            139
+          ],
+          "sourceOklch": [
+            0.582597101523535,
+            0.11110298814951614,
+            39.2833830770644
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "183,84,152",
+          "sourceRgb": [
+            194,
+            107,
+            76
+          ],
+          "targetRgb": [
+            183,
+            84,
+            152
+          ],
+          "sourceOklch": [
+            0.6202256129145933,
+            0.1195986411936008,
+            40.14036135328441
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "197,90,164",
+          "sourceRgb": [
+            200,
+            116,
+            86
+          ],
+          "targetRgb": [
+            197,
+            90,
+            164
+          ],
+          "sourceOklch": [
+            0.6449748083437152,
+            0.11452245354933564,
+            40.26817611619824
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "210,97,177",
+          "sourceRgb": [
+            214,
+            123,
+            91
+          ],
+          "targetRgb": [
+            210,
+            97,
+            177
+          ],
+          "sourceOklch": [
+            0.6757300194090894,
+            0.12239305294326912,
+            39.99108609100801
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "223,104,189",
+          "sourceRgb": [
+            227,
+            130,
+            108
+          ],
+          "targetRgb": [
+            223,
+            104,
+            189
+          ],
+          "sourceOklch": [
+            0.7069693257093912,
+            0.1245286293753449,
+            33.73348693609524
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "131,58,103",
+          "sourceRgb": [
+            61,
+            22,
+            30
+          ],
+          "targetRgb": [
+            131,
+            58,
+            103
+          ],
+          "sourceOklch": [
+            0.262918383448369,
+            0.06177106506527718,
+            9.584114791939607
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "131,58,103",
+          "sourceRgb": [
+            91,
+            41,
+            36
+          ],
+          "targetRgb": [
+            131,
+            58,
+            103
+          ],
+          "sourceOklch": [
+            0.3487589070058929,
+            0.07459718343885835,
+            27.392957470915004
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ]
+    },
+    "orange": {
+      "unmatchedColor": {
+        "mode": "nearest",
+        "distanceMetric": "oklch",
+        "threshold": 0.1
+      },
+      "stats": {
+        "referencePairs": 2,
+        "sourceColors": 11
+      },
+      "sourceToTarget": [
+        {
+          "source": "121,59,43",
+          "target": "142,79,52",
+          "sourceRgba": [
+            121,
+            59,
+            43,
+            255
+          ],
+          "targetRgba": [
+            142,
+            79,
+            52,
+            255
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "155,90,52",
+          "sourceRgba": [
+            144,
+            73,
+            49,
+            255
+          ],
+          "targetRgba": [
+            155,
+            90,
+            52,
+            255
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "155,90,52",
+          "sourceRgba": [
+            154,
+            80,
+            56,
+            255
+          ],
+          "targetRgba": [
+            155,
+            90,
+            52,
+            255
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "169,102,52",
+          "sourceRgba": [
+            167,
+            90,
+            64,
+            255
+          ],
+          "targetRgba": [
+            169,
+            102,
+            52,
+            255
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "182,113,52",
+          "sourceRgba": [
+            178,
+            98,
+            71,
+            255
+          ],
+          "targetRgba": [
+            182,
+            113,
+            52,
+            255
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "195,124,54",
+          "sourceRgba": [
+            194,
+            107,
+            76,
+            255
+          ],
+          "targetRgba": [
+            195,
+            124,
+            54,
+            255
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "208,135,54",
+          "sourceRgba": [
+            200,
+            116,
+            86,
+            255
+          ],
+          "targetRgba": [
+            208,
+            135,
+            54,
+            255
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "222,146,54",
+          "sourceRgba": [
+            214,
+            123,
+            91,
+            255
+          ],
+          "targetRgba": [
+            222,
+            146,
+            54,
+            255
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "236,158,55",
+          "sourceRgba": [
+            227,
+            130,
+            108,
+            255
+          ],
+          "targetRgba": [
+            236,
+            158,
+            55,
+            255
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "142,79,52",
+          "sourceRgba": [
+            61,
+            22,
+            30,
+            255
+          ],
+          "targetRgba": [
+            142,
+            79,
+            52,
+            255
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "142,79,52",
+          "sourceRgba": [
+            91,
+            41,
+            36,
+            255
+          ],
+          "targetRgba": [
+            142,
+            79,
+            52,
+            255
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ],
+      "approximatePalette": [
+        {
+          "source": "121,59,43",
+          "target": "142,79,52",
+          "sourceRgb": [
+            121,
+            59,
+            43
+          ],
+          "targetRgb": [
+            142,
+            79,
+            52
+          ],
+          "sourceOklch": [
+            0.4288737174503577,
+            0.09077324912002663,
+            35.51276833676762
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "155,90,52",
+          "sourceRgb": [
+            144,
+            73,
+            49
+          ],
+          "targetRgb": [
+            155,
+            90,
+            52
+          ],
+          "sourceOklch": [
+            0.48841052120708534,
+            0.10280391380885888,
+            39.19863889683775
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "155,90,52",
+          "sourceRgb": [
+            154,
+            80,
+            56
+          ],
+          "targetRgb": [
+            155,
+            90,
+            52
+          ],
+          "sourceOklch": [
+            0.5159759825262341,
+            0.10537939009259728,
+            38.6166383874286
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "169,102,52",
+          "sourceRgb": [
+            167,
+            90,
+            64
+          ],
+          "targetRgb": [
+            169,
+            102,
+            52
+          ],
+          "sourceOklch": [
+            0.5526836621834825,
+            0.108304746669396,
+            39.266689046485816
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "182,113,52",
+          "sourceRgb": [
+            178,
+            98,
+            71
+          ],
+          "targetRgb": [
+            182,
+            113,
+            52
+          ],
+          "sourceOklch": [
+            0.582597101523535,
+            0.11110298814951614,
+            39.2833830770644
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "195,124,54",
+          "sourceRgb": [
+            194,
+            107,
+            76
+          ],
+          "targetRgb": [
+            195,
+            124,
+            54
+          ],
+          "sourceOklch": [
+            0.6202256129145933,
+            0.1195986411936008,
+            40.14036135328441
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "208,135,54",
+          "sourceRgb": [
+            200,
+            116,
+            86
+          ],
+          "targetRgb": [
+            208,
+            135,
+            54
+          ],
+          "sourceOklch": [
+            0.6449748083437152,
+            0.11452245354933564,
+            40.26817611619824
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "222,146,54",
+          "sourceRgb": [
+            214,
+            123,
+            91
+          ],
+          "targetRgb": [
+            222,
+            146,
+            54
+          ],
+          "sourceOklch": [
+            0.6757300194090894,
+            0.12239305294326912,
+            39.99108609100801
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "236,158,55",
+          "sourceRgb": [
+            227,
+            130,
+            108
+          ],
+          "targetRgb": [
+            236,
+            158,
+            55
+          ],
+          "sourceOklch": [
+            0.7069693257093912,
+            0.1245286293753449,
+            33.73348693609524
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "142,79,52",
+          "sourceRgb": [
+            61,
+            22,
+            30
+          ],
+          "targetRgb": [
+            142,
+            79,
+            52
+          ],
+          "sourceOklch": [
+            0.262918383448369,
+            0.06177106506527718,
+            9.584114791939607
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "142,79,52",
+          "sourceRgb": [
+            91,
+            41,
+            36
+          ],
+          "targetRgb": [
+            142,
+            79,
+            52
+          ],
+          "sourceOklch": [
+            0.3487589070058929,
+            0.07459718343885835,
+            27.392957470915004
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ]
+    },
+    "pink": {
+      "unmatchedColor": {
+        "mode": "nearest",
+        "distanceMetric": "oklch",
+        "threshold": 0.1
+      },
+      "stats": {
+        "referencePairs": 2,
+        "sourceColors": 11
+      },
+      "sourceToTarget": [
+        {
+          "source": "121,59,43",
+          "target": "176,81,113",
+          "sourceRgba": [
+            121,
+            59,
+            43,
+            255
+          ],
+          "targetRgba": [
+            176,
+            81,
+            113,
+            255
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "186,95,124",
+          "sourceRgba": [
+            144,
+            73,
+            49,
+            255
+          ],
+          "targetRgba": [
+            186,
+            95,
+            124,
+            255
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "186,95,124",
+          "sourceRgba": [
+            154,
+            80,
+            56,
+            255
+          ],
+          "targetRgba": [
+            186,
+            95,
+            124,
+            255
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "196,109,134",
+          "sourceRgba": [
+            167,
+            90,
+            64,
+            255
+          ],
+          "targetRgba": [
+            196,
+            109,
+            134,
+            255
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "207,122,146",
+          "sourceRgba": [
+            178,
+            98,
+            71,
+            255
+          ],
+          "targetRgba": [
+            207,
+            122,
+            146,
+            255
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "217,137,157",
+          "sourceRgba": [
+            194,
+            107,
+            76,
+            255
+          ],
+          "targetRgba": [
+            217,
+            137,
+            157,
+            255
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "227,151,168",
+          "sourceRgba": [
+            200,
+            116,
+            86,
+            255
+          ],
+          "targetRgba": [
+            227,
+            151,
+            168,
+            255
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "238,164,180",
+          "sourceRgba": [
+            214,
+            123,
+            91,
+            255
+          ],
+          "targetRgba": [
+            238,
+            164,
+            180,
+            255
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "249,179,191",
+          "sourceRgba": [
+            227,
+            130,
+            108,
+            255
+          ],
+          "targetRgba": [
+            249,
+            179,
+            191,
+            255
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "176,81,113",
+          "sourceRgba": [
+            61,
+            22,
+            30,
+            255
+          ],
+          "targetRgba": [
+            176,
+            81,
+            113,
+            255
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "176,81,113",
+          "sourceRgba": [
+            91,
+            41,
+            36,
+            255
+          ],
+          "targetRgba": [
+            176,
+            81,
+            113,
+            255
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ],
+      "approximatePalette": [
+        {
+          "source": "121,59,43",
+          "target": "176,81,113",
+          "sourceRgb": [
+            121,
+            59,
+            43
+          ],
+          "targetRgb": [
+            176,
+            81,
+            113
+          ],
+          "sourceOklch": [
+            0.4288737174503577,
+            0.09077324912002663,
+            35.51276833676762
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "186,95,124",
+          "sourceRgb": [
+            144,
+            73,
+            49
+          ],
+          "targetRgb": [
+            186,
+            95,
+            124
+          ],
+          "sourceOklch": [
+            0.48841052120708534,
+            0.10280391380885888,
+            39.19863889683775
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "186,95,124",
+          "sourceRgb": [
+            154,
+            80,
+            56
+          ],
+          "targetRgb": [
+            186,
+            95,
+            124
+          ],
+          "sourceOklch": [
+            0.5159759825262341,
+            0.10537939009259728,
+            38.6166383874286
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "196,109,134",
+          "sourceRgb": [
+            167,
+            90,
+            64
+          ],
+          "targetRgb": [
+            196,
+            109,
+            134
+          ],
+          "sourceOklch": [
+            0.5526836621834825,
+            0.108304746669396,
+            39.266689046485816
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "207,122,146",
+          "sourceRgb": [
+            178,
+            98,
+            71
+          ],
+          "targetRgb": [
+            207,
+            122,
+            146
+          ],
+          "sourceOklch": [
+            0.582597101523535,
+            0.11110298814951614,
+            39.2833830770644
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "217,137,157",
+          "sourceRgb": [
+            194,
+            107,
+            76
+          ],
+          "targetRgb": [
+            217,
+            137,
+            157
+          ],
+          "sourceOklch": [
+            0.6202256129145933,
+            0.1195986411936008,
+            40.14036135328441
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "227,151,168",
+          "sourceRgb": [
+            200,
+            116,
+            86
+          ],
+          "targetRgb": [
+            227,
+            151,
+            168
+          ],
+          "sourceOklch": [
+            0.6449748083437152,
+            0.11452245354933564,
+            40.26817611619824
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "238,164,180",
+          "sourceRgb": [
+            214,
+            123,
+            91
+          ],
+          "targetRgb": [
+            238,
+            164,
+            180
+          ],
+          "sourceOklch": [
+            0.6757300194090894,
+            0.12239305294326912,
+            39.99108609100801
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "249,179,191",
+          "sourceRgb": [
+            227,
+            130,
+            108
+          ],
+          "targetRgb": [
+            249,
+            179,
+            191
+          ],
+          "sourceOklch": [
+            0.7069693257093912,
+            0.1245286293753449,
+            33.73348693609524
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "176,81,113",
+          "sourceRgb": [
+            61,
+            22,
+            30
+          ],
+          "targetRgb": [
+            176,
+            81,
+            113
+          ],
+          "sourceOklch": [
+            0.262918383448369,
+            0.06177106506527718,
+            9.584114791939607
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "176,81,113",
+          "sourceRgb": [
+            91,
+            41,
+            36
+          ],
+          "targetRgb": [
+            176,
+            81,
+            113
+          ],
+          "sourceOklch": [
+            0.3487589070058929,
+            0.07459718343885835,
+            27.392957470915004
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ]
+    },
+    "purple": {
+      "unmatchedColor": {
+        "mode": "nearest",
+        "distanceMetric": "oklch",
+        "threshold": 0.1
+      },
+      "stats": {
+        "referencePairs": 2,
+        "sourceColors": 11
+      },
+      "sourceToTarget": [
+        {
+          "source": "121,59,43",
+          "target": "104,35,118",
+          "sourceRgba": [
+            121,
+            59,
+            43,
+            255
+          ],
+          "targetRgba": [
+            104,
+            35,
+            118,
+            255
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "112,43,128",
+          "sourceRgba": [
+            144,
+            73,
+            49,
+            255
+          ],
+          "targetRgba": [
+            112,
+            43,
+            128,
+            255
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "112,43,128",
+          "sourceRgba": [
+            154,
+            80,
+            56,
+            255
+          ],
+          "targetRgba": [
+            112,
+            43,
+            128,
+            255
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "121,50,138",
+          "sourceRgba": [
+            167,
+            90,
+            64,
+            255
+          ],
+          "targetRgba": [
+            121,
+            50,
+            138,
+            255
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "129,57,149",
+          "sourceRgba": [
+            178,
+            98,
+            71,
+            255
+          ],
+          "targetRgba": [
+            129,
+            57,
+            149,
+            255
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "138,65,160",
+          "sourceRgba": [
+            194,
+            107,
+            76,
+            255
+          ],
+          "targetRgba": [
+            138,
+            65,
+            160,
+            255
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "147,73,170",
+          "sourceRgba": [
+            200,
+            116,
+            86,
+            255
+          ],
+          "targetRgba": [
+            147,
+            73,
+            170,
+            255
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "156,80,181",
+          "sourceRgba": [
+            214,
+            123,
+            91,
+            255
+          ],
+          "targetRgba": [
+            156,
+            80,
+            181,
+            255
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "165,88,192",
+          "sourceRgba": [
+            227,
+            130,
+            108,
+            255
+          ],
+          "targetRgba": [
+            165,
+            88,
+            192,
+            255
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "104,35,118",
+          "sourceRgba": [
+            61,
+            22,
+            30,
+            255
+          ],
+          "targetRgba": [
+            104,
+            35,
+            118,
+            255
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "104,35,118",
+          "sourceRgba": [
+            91,
+            41,
+            36,
+            255
+          ],
+          "targetRgba": [
+            104,
+            35,
+            118,
+            255
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ],
+      "approximatePalette": [
+        {
+          "source": "121,59,43",
+          "target": "104,35,118",
+          "sourceRgb": [
+            121,
+            59,
+            43
+          ],
+          "targetRgb": [
+            104,
+            35,
+            118
+          ],
+          "sourceOklch": [
+            0.4288737174503577,
+            0.09077324912002663,
+            35.51276833676762
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "112,43,128",
+          "sourceRgb": [
+            144,
+            73,
+            49
+          ],
+          "targetRgb": [
+            112,
+            43,
+            128
+          ],
+          "sourceOklch": [
+            0.48841052120708534,
+            0.10280391380885888,
+            39.19863889683775
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "112,43,128",
+          "sourceRgb": [
+            154,
+            80,
+            56
+          ],
+          "targetRgb": [
+            112,
+            43,
+            128
+          ],
+          "sourceOklch": [
+            0.5159759825262341,
+            0.10537939009259728,
+            38.6166383874286
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "121,50,138",
+          "sourceRgb": [
+            167,
+            90,
+            64
+          ],
+          "targetRgb": [
+            121,
+            50,
+            138
+          ],
+          "sourceOklch": [
+            0.5526836621834825,
+            0.108304746669396,
+            39.266689046485816
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "129,57,149",
+          "sourceRgb": [
+            178,
+            98,
+            71
+          ],
+          "targetRgb": [
+            129,
+            57,
+            149
+          ],
+          "sourceOklch": [
+            0.582597101523535,
+            0.11110298814951614,
+            39.2833830770644
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "138,65,160",
+          "sourceRgb": [
+            194,
+            107,
+            76
+          ],
+          "targetRgb": [
+            138,
+            65,
+            160
+          ],
+          "sourceOklch": [
+            0.6202256129145933,
+            0.1195986411936008,
+            40.14036135328441
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "147,73,170",
+          "sourceRgb": [
+            200,
+            116,
+            86
+          ],
+          "targetRgb": [
+            147,
+            73,
+            170
+          ],
+          "sourceOklch": [
+            0.6449748083437152,
+            0.11452245354933564,
+            40.26817611619824
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "156,80,181",
+          "sourceRgb": [
+            214,
+            123,
+            91
+          ],
+          "targetRgb": [
+            156,
+            80,
+            181
+          ],
+          "sourceOklch": [
+            0.6757300194090894,
+            0.12239305294326912,
+            39.99108609100801
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "165,88,192",
+          "sourceRgb": [
+            227,
+            130,
+            108
+          ],
+          "targetRgb": [
+            165,
+            88,
+            192
+          ],
+          "sourceOklch": [
+            0.7069693257093912,
+            0.1245286293753449,
+            33.73348693609524
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "104,35,118",
+          "sourceRgb": [
+            61,
+            22,
+            30
+          ],
+          "targetRgb": [
+            104,
+            35,
+            118
+          ],
+          "sourceOklch": [
+            0.262918383448369,
+            0.06177106506527718,
+            9.584114791939607
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "104,35,118",
+          "sourceRgb": [
+            91,
+            41,
+            36
+          ],
+          "targetRgb": [
+            104,
+            35,
+            118
+          ],
+          "sourceOklch": [
+            0.3487589070058929,
+            0.07459718343885835,
+            27.392957470915004
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ]
+    },
+    "red": {
+      "unmatchedColor": {
+        "mode": "nearest",
+        "distanceMetric": "oklch",
+        "threshold": 0.1
+      },
+      "stats": {
+        "referencePairs": 2,
+        "sourceColors": 11
+      },
+      "sourceToTarget": [
+        {
+          "source": "121,59,43",
+          "target": "94,28,51",
+          "sourceRgba": [
+            121,
+            59,
+            43,
+            255
+          ],
+          "targetRgba": [
+            94,
+            28,
+            51,
+            255
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "106,32,51",
+          "sourceRgba": [
+            144,
+            73,
+            49,
+            255
+          ],
+          "targetRgba": [
+            106,
+            32,
+            51,
+            255
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "106,32,51",
+          "sourceRgba": [
+            154,
+            80,
+            56,
+            255
+          ],
+          "targetRgba": [
+            106,
+            32,
+            51,
+            255
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "119,36,52",
+          "sourceRgba": [
+            167,
+            90,
+            64,
+            255
+          ],
+          "targetRgba": [
+            119,
+            36,
+            52,
+            255
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "131,40,54",
+          "sourceRgba": [
+            178,
+            98,
+            71,
+            255
+          ],
+          "targetRgba": [
+            131,
+            40,
+            54,
+            255
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "144,45,54",
+          "sourceRgba": [
+            194,
+            107,
+            76,
+            255
+          ],
+          "targetRgba": [
+            144,
+            45,
+            54,
+            255
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "156,49,55",
+          "sourceRgba": [
+            200,
+            116,
+            86,
+            255
+          ],
+          "targetRgba": [
+            156,
+            49,
+            55,
+            255
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "169,53,57",
+          "sourceRgba": [
+            214,
+            123,
+            91,
+            255
+          ],
+          "targetRgba": [
+            169,
+            53,
+            57,
+            255
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "182,58,58",
+          "sourceRgba": [
+            227,
+            130,
+            108,
+            255
+          ],
+          "targetRgba": [
+            182,
+            58,
+            58,
+            255
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "94,28,51",
+          "sourceRgba": [
+            61,
+            22,
+            30,
+            255
+          ],
+          "targetRgba": [
+            94,
+            28,
+            51,
+            255
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "94,28,51",
+          "sourceRgba": [
+            91,
+            41,
+            36,
+            255
+          ],
+          "targetRgba": [
+            94,
+            28,
+            51,
+            255
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ],
+      "approximatePalette": [
+        {
+          "source": "121,59,43",
+          "target": "94,28,51",
+          "sourceRgb": [
+            121,
+            59,
+            43
+          ],
+          "targetRgb": [
+            94,
+            28,
+            51
+          ],
+          "sourceOklch": [
+            0.4288737174503577,
+            0.09077324912002663,
+            35.51276833676762
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "106,32,51",
+          "sourceRgb": [
+            144,
+            73,
+            49
+          ],
+          "targetRgb": [
+            106,
+            32,
+            51
+          ],
+          "sourceOklch": [
+            0.48841052120708534,
+            0.10280391380885888,
+            39.19863889683775
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "106,32,51",
+          "sourceRgb": [
+            154,
+            80,
+            56
+          ],
+          "targetRgb": [
+            106,
+            32,
+            51
+          ],
+          "sourceOklch": [
+            0.5159759825262341,
+            0.10537939009259728,
+            38.6166383874286
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "119,36,52",
+          "sourceRgb": [
+            167,
+            90,
+            64
+          ],
+          "targetRgb": [
+            119,
+            36,
+            52
+          ],
+          "sourceOklch": [
+            0.5526836621834825,
+            0.108304746669396,
+            39.266689046485816
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "131,40,54",
+          "sourceRgb": [
+            178,
+            98,
+            71
+          ],
+          "targetRgb": [
+            131,
+            40,
+            54
+          ],
+          "sourceOklch": [
+            0.582597101523535,
+            0.11110298814951614,
+            39.2833830770644
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "144,45,54",
+          "sourceRgb": [
+            194,
+            107,
+            76
+          ],
+          "targetRgb": [
+            144,
+            45,
+            54
+          ],
+          "sourceOklch": [
+            0.6202256129145933,
+            0.1195986411936008,
+            40.14036135328441
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "156,49,55",
+          "sourceRgb": [
+            200,
+            116,
+            86
+          ],
+          "targetRgb": [
+            156,
+            49,
+            55
+          ],
+          "sourceOklch": [
+            0.6449748083437152,
+            0.11452245354933564,
+            40.26817611619824
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "169,53,57",
+          "sourceRgb": [
+            214,
+            123,
+            91
+          ],
+          "targetRgb": [
+            169,
+            53,
+            57
+          ],
+          "sourceOklch": [
+            0.6757300194090894,
+            0.12239305294326912,
+            39.99108609100801
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "182,58,58",
+          "sourceRgb": [
+            227,
+            130,
+            108
+          ],
+          "targetRgb": [
+            182,
+            58,
+            58
+          ],
+          "sourceOklch": [
+            0.7069693257093912,
+            0.1245286293753449,
+            33.73348693609524
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "94,28,51",
+          "sourceRgb": [
+            61,
+            22,
+            30
+          ],
+          "targetRgb": [
+            94,
+            28,
+            51
+          ],
+          "sourceOklch": [
+            0.262918383448369,
+            0.06177106506527718,
+            9.584114791939607
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "94,28,51",
+          "sourceRgb": [
+            91,
+            41,
+            36
+          ],
+          "targetRgb": [
+            94,
+            28,
+            51
+          ],
+          "sourceOklch": [
+            0.3487589070058929,
+            0.07459718343885835,
+            27.392957470915004
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ]
+    },
+    "white": {
+      "unmatchedColor": {
+        "mode": "nearest",
+        "distanceMetric": "oklch",
+        "threshold": 0.1
+      },
+      "stats": {
+        "referencePairs": 2,
+        "sourceColors": 11
+      },
+      "sourceToTarget": [
+        {
+          "source": "121,59,43",
+          "target": "132,132,125",
+          "sourceRgba": [
+            121,
+            59,
+            43,
+            255
+          ],
+          "targetRgba": [
+            132,
+            132,
+            125,
+            255
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "150,149,143",
+          "sourceRgba": [
+            144,
+            73,
+            49,
+            255
+          ],
+          "targetRgba": [
+            150,
+            149,
+            143,
+            255
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "150,149,143",
+          "sourceRgba": [
+            154,
+            80,
+            56,
+            255
+          ],
+          "targetRgba": [
+            150,
+            149,
+            143,
+            255
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "167,167,162",
+          "sourceRgba": [
+            167,
+            90,
+            64,
+            255
+          ],
+          "targetRgba": [
+            167,
+            167,
+            162,
+            255
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "185,184,180",
+          "sourceRgba": [
+            178,
+            98,
+            71,
+            255
+          ],
+          "targetRgba": [
+            185,
+            184,
+            180,
+            255
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "202,202,199",
+          "sourceRgba": [
+            194,
+            107,
+            76,
+            255
+          ],
+          "targetRgba": [
+            202,
+            202,
+            199,
+            255
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "220,220,217",
+          "sourceRgba": [
+            200,
+            116,
+            86,
+            255
+          ],
+          "targetRgba": [
+            220,
+            220,
+            217,
+            255
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "237,237,236",
+          "sourceRgba": [
+            214,
+            123,
+            91,
+            255
+          ],
+          "targetRgba": [
+            237,
+            237,
+            236,
+            255
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "255,255,255",
+          "sourceRgba": [
+            227,
+            130,
+            108,
+            255
+          ],
+          "targetRgba": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "132,132,125",
+          "sourceRgba": [
+            61,
+            22,
+            30,
+            255
+          ],
+          "targetRgba": [
+            132,
+            132,
+            125,
+            255
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "132,132,125",
+          "sourceRgba": [
+            91,
+            41,
+            36,
+            255
+          ],
+          "targetRgba": [
+            132,
+            132,
+            125,
+            255
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ],
+      "approximatePalette": [
+        {
+          "source": "121,59,43",
+          "target": "132,132,125",
+          "sourceRgb": [
+            121,
+            59,
+            43
+          ],
+          "targetRgb": [
+            132,
+            132,
+            125
+          ],
+          "sourceOklch": [
+            0.4288737174503577,
+            0.09077324912002663,
+            35.51276833676762
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "150,149,143",
+          "sourceRgb": [
+            144,
+            73,
+            49
+          ],
+          "targetRgb": [
+            150,
+            149,
+            143
+          ],
+          "sourceOklch": [
+            0.48841052120708534,
+            0.10280391380885888,
+            39.19863889683775
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "150,149,143",
+          "sourceRgb": [
+            154,
+            80,
+            56
+          ],
+          "targetRgb": [
+            150,
+            149,
+            143
+          ],
+          "sourceOklch": [
+            0.5159759825262341,
+            0.10537939009259728,
+            38.6166383874286
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "167,167,162",
+          "sourceRgb": [
+            167,
+            90,
+            64
+          ],
+          "targetRgb": [
+            167,
+            167,
+            162
+          ],
+          "sourceOklch": [
+            0.5526836621834825,
+            0.108304746669396,
+            39.266689046485816
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "185,184,180",
+          "sourceRgb": [
+            178,
+            98,
+            71
+          ],
+          "targetRgb": [
+            185,
+            184,
+            180
+          ],
+          "sourceOklch": [
+            0.582597101523535,
+            0.11110298814951614,
+            39.2833830770644
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "202,202,199",
+          "sourceRgb": [
+            194,
+            107,
+            76
+          ],
+          "targetRgb": [
+            202,
+            202,
+            199
+          ],
+          "sourceOklch": [
+            0.6202256129145933,
+            0.1195986411936008,
+            40.14036135328441
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "220,220,217",
+          "sourceRgb": [
+            200,
+            116,
+            86
+          ],
+          "targetRgb": [
+            220,
+            220,
+            217
+          ],
+          "sourceOklch": [
+            0.6449748083437152,
+            0.11452245354933564,
+            40.26817611619824
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "237,237,236",
+          "sourceRgb": [
+            214,
+            123,
+            91
+          ],
+          "targetRgb": [
+            237,
+            237,
+            236
+          ],
+          "sourceOklch": [
+            0.6757300194090894,
+            0.12239305294326912,
+            39.99108609100801
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "255,255,255",
+          "sourceRgb": [
+            227,
+            130,
+            108
+          ],
+          "targetRgb": [
+            255,
+            255,
+            255
+          ],
+          "sourceOklch": [
+            0.7069693257093912,
+            0.1245286293753449,
+            33.73348693609524
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "132,132,125",
+          "sourceRgb": [
+            61,
+            22,
+            30
+          ],
+          "targetRgb": [
+            132,
+            132,
+            125
+          ],
+          "sourceOklch": [
+            0.262918383448369,
+            0.06177106506527718,
+            9.584114791939607
+          ],
+          "sampleCount": 36,
+          "chosenCount": 4
+        },
+        {
+          "source": "91,41,36",
+          "target": "132,132,125",
+          "sourceRgb": [
+            91,
+            41,
+            36
+          ],
+          "targetRgb": [
+            132,
+            132,
+            125
+          ],
+          "sourceOklch": [
+            0.3487589070058929,
+            0.07459718343885835,
+            27.392957470915004
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ]
+    },
+    "yellow": {
+      "unmatchedColor": {
+        "mode": "nearest",
+        "distanceMetric": "oklch",
+        "threshold": 0.1
+      },
+      "stats": {
+        "referencePairs": 2,
+        "sourceColors": 11
+      },
+      "sourceToTarget": [
+        {
+          "source": "121,59,43",
+          "target": "129,88,39",
+          "sourceRgba": [
+            121,
+            59,
+            43,
+            255
+          ],
+          "targetRgba": [
+            129,
+            88,
+            39,
+            255
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "144,103,42",
+          "sourceRgba": [
+            144,
+            73,
+            49,
+            255
+          ],
+          "targetRgba": [
+            144,
+            103,
+            42,
+            255
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "144,103,42",
+          "sourceRgba": [
+            154,
+            80,
+            56,
+            255
+          ],
+          "targetRgba": [
+            144,
+            103,
+            42,
+            255
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "160,119,46",
+          "sourceRgba": [
+            167,
+            90,
+            64,
+            255
+          ],
+          "targetRgba": [
+            160,
+            119,
+            46,
+            255
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "176,135,50",
+          "sourceRgba": [
+            178,
+            98,
+            71,
+            255
+          ],
+          "targetRgba": [
+            176,
+            135,
+            50,
+            255
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "192,151,54",
+          "sourceRgba": [
+            194,
+            107,
+            76,
+            255
+          ],
+          "targetRgba": [
+            192,
+            151,
+            54,
+            255
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "208,167,58",
+          "sourceRgba": [
+            200,
+            116,
+            86,
+            255
+          ],
+          "targetRgba": [
+            208,
+            167,
+            58,
+            255
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "224,183,62",
+          "sourceRgba": [
+            214,
+            123,
+            91,
+            255
+          ],
+          "targetRgba": [
+            224,
+            183,
+            62,
+            255
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "240,199,66",
+          "sourceRgba": [
+            227,
+            130,
+            108,
+            255
+          ],
+          "targetRgba": [
+            240,
+            199,
+            66,
+            255
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "0,0,0",
+          "sourceRgba": [
+            61,
+            22,
+            30,
+            255
+          ],
+          "targetRgba": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sampleCount": 36,
+          "chosenCount": 32
+        },
+        {
+          "source": "91,41,36",
+          "target": "129,88,39",
+          "sourceRgba": [
+            91,
+            41,
+            36,
+            255
+          ],
+          "targetRgba": [
+            129,
+            88,
+            39,
+            255
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ],
+      "approximatePalette": [
+        {
+          "source": "121,59,43",
+          "target": "129,88,39",
+          "sourceRgb": [
+            121,
+            59,
+            43
+          ],
+          "targetRgb": [
+            129,
+            88,
+            39
+          ],
+          "sourceOklch": [
+            0.4288737174503577,
+            0.09077324912002663,
+            35.51276833676762
+          ],
+          "sampleCount": 4,
+          "chosenCount": 4
+        },
+        {
+          "source": "144,73,49",
+          "target": "144,103,42",
+          "sourceRgb": [
+            144,
+            73,
+            49
+          ],
+          "targetRgb": [
+            144,
+            103,
+            42
+          ],
+          "sourceOklch": [
+            0.48841052120708534,
+            0.10280391380885888,
+            39.19863889683775
+          ],
+          "sampleCount": 46,
+          "chosenCount": 11
+        },
+        {
+          "source": "154,80,56",
+          "target": "144,103,42",
+          "sourceRgb": [
+            154,
+            80,
+            56
+          ],
+          "targetRgb": [
+            144,
+            103,
+            42
+          ],
+          "sourceOklch": [
+            0.5159759825262341,
+            0.10537939009259728,
+            38.6166383874286
+          ],
+          "sampleCount": 101,
+          "chosenCount": 54
+        },
+        {
+          "source": "167,90,64",
+          "target": "160,119,46",
+          "sourceRgb": [
+            167,
+            90,
+            64
+          ],
+          "targetRgb": [
+            160,
+            119,
+            46
+          ],
+          "sourceOklch": [
+            0.5526836621834825,
+            0.108304746669396,
+            39.266689046485816
+          ],
+          "sampleCount": 174,
+          "chosenCount": 114
+        },
+        {
+          "source": "178,98,71",
+          "target": "176,135,50",
+          "sourceRgb": [
+            178,
+            98,
+            71
+          ],
+          "targetRgb": [
+            176,
+            135,
+            50
+          ],
+          "sourceOklch": [
+            0.582597101523535,
+            0.11110298814951614,
+            39.2833830770644
+          ],
+          "sampleCount": 66,
+          "chosenCount": 32
+        },
+        {
+          "source": "194,107,76",
+          "target": "192,151,54",
+          "sourceRgb": [
+            194,
+            107,
+            76
+          ],
+          "targetRgb": [
+            192,
+            151,
+            54
+          ],
+          "sourceOklch": [
+            0.6202256129145933,
+            0.1195986411936008,
+            40.14036135328441
+          ],
+          "sampleCount": 224,
+          "chosenCount": 161
+        },
+        {
+          "source": "200,116,86",
+          "target": "208,167,58",
+          "sourceRgb": [
+            200,
+            116,
+            86
+          ],
+          "targetRgb": [
+            208,
+            167,
+            58
+          ],
+          "sourceOklch": [
+            0.6449748083437152,
+            0.11452245354933564,
+            40.26817611619824
+          ],
+          "sampleCount": 118,
+          "chosenCount": 64
+        },
+        {
+          "source": "214,123,91",
+          "target": "224,183,62",
+          "sourceRgb": [
+            214,
+            123,
+            91
+          ],
+          "targetRgb": [
+            224,
+            183,
+            62
+          ],
+          "sourceOklch": [
+            0.6757300194090894,
+            0.12239305294326912,
+            39.99108609100801
+          ],
+          "sampleCount": 236,
+          "chosenCount": 176
+        },
+        {
+          "source": "227,130,108",
+          "target": "240,199,66",
+          "sourceRgb": [
+            227,
+            130,
+            108
+          ],
+          "targetRgb": [
+            240,
+            199,
+            66
+          ],
+          "sourceOklch": [
+            0.7069693257093912,
+            0.1245286293753449,
+            33.73348693609524
+          ],
+          "sampleCount": 161,
+          "chosenCount": 126
+        },
+        {
+          "source": "61,22,30",
+          "target": "0,0,0",
+          "sourceRgb": [
+            61,
+            22,
+            30
+          ],
+          "targetRgb": [
+            0,
+            0,
+            0
+          ],
+          "sourceOklch": [
+            0.262918383448369,
+            0.06177106506527718,
+            9.584114791939607
+          ],
+          "sampleCount": 36,
+          "chosenCount": 32
+        },
+        {
+          "source": "91,41,36",
+          "target": "129,88,39",
+          "sourceRgb": [
+            91,
+            41,
+            36
+          ],
+          "targetRgb": [
+            129,
+            88,
+            39
+          ],
+          "sourceOklch": [
+            0.3487589070058929,
+            0.07459718343885835,
+            27.392957470915004
+          ],
+          "sampleCount": 8,
+          "chosenCount": 4
+        }
+      ]
+    }
+  },
+  "processingSummary": {
+    "black": {
+      "files": {
+        "glass_fluid_pipe.png": {
+          "outputFile": "glass_fluid_pipe_black.png",
+          "totalPixels": 256,
+          "transparentPixels": 104,
+          "exactMatches": 104,
+          "approximateMatches": 0,
+          "preservedPixels": 48,
+          "unmatchedColor": {
+            "mode": "nearest",
+            "distanceMetric": "oklch",
+            "threshold": 0.1
+          }
+        }
+      },
+      "totals": {
+        "exactMatches": 104,
+        "approximateMatches": 0,
+        "preservedPixels": 48,
+        "transparentPixels": 104
+      }
+    },
+    "blue": {
+      "files": {
+        "glass_fluid_pipe.png": {
+          "outputFile": "glass_fluid_pipe_blue.png",
+          "totalPixels": 256,
+          "transparentPixels": 104,
+          "exactMatches": 104,
+          "approximateMatches": 0,
+          "preservedPixels": 48,
+          "unmatchedColor": {
+            "mode": "nearest",
+            "distanceMetric": "oklch",
+            "threshold": 0.1
+          }
+        }
+      },
+      "totals": {
+        "exactMatches": 104,
+        "approximateMatches": 0,
+        "preservedPixels": 48,
+        "transparentPixels": 104
+      }
+    },
+    "brown": {
+      "files": {
+        "glass_fluid_pipe.png": {
+          "outputFile": "glass_fluid_pipe_brown.png",
+          "totalPixels": 256,
+          "transparentPixels": 104,
+          "exactMatches": 104,
+          "approximateMatches": 0,
+          "preservedPixels": 48,
+          "unmatchedColor": {
+            "mode": "nearest",
+            "distanceMetric": "oklch",
+            "threshold": 0.1
+          }
+        }
+      },
+      "totals": {
+        "exactMatches": 104,
+        "approximateMatches": 0,
+        "preservedPixels": 48,
+        "transparentPixels": 104
+      }
+    },
+    "cyan": {
+      "files": {
+        "glass_fluid_pipe.png": {
+          "outputFile": "glass_fluid_pipe_cyan.png",
+          "totalPixels": 256,
+          "transparentPixels": 104,
+          "exactMatches": 104,
+          "approximateMatches": 0,
+          "preservedPixels": 48,
+          "unmatchedColor": {
+            "mode": "nearest",
+            "distanceMetric": "oklch",
+            "threshold": 0.1
+          }
+        }
+      },
+      "totals": {
+        "exactMatches": 104,
+        "approximateMatches": 0,
+        "preservedPixels": 48,
+        "transparentPixels": 104
+      }
+    },
+    "gray": {
+      "files": {
+        "glass_fluid_pipe.png": {
+          "outputFile": "glass_fluid_pipe_gray.png",
+          "totalPixels": 256,
+          "transparentPixels": 104,
+          "exactMatches": 104,
+          "approximateMatches": 0,
+          "preservedPixels": 48,
+          "unmatchedColor": {
+            "mode": "nearest",
+            "distanceMetric": "oklch",
+            "threshold": 0.1
+          }
+        }
+      },
+      "totals": {
+        "exactMatches": 104,
+        "approximateMatches": 0,
+        "preservedPixels": 48,
+        "transparentPixels": 104
+      }
+    },
+    "green": {
+      "files": {
+        "glass_fluid_pipe.png": {
+          "outputFile": "glass_fluid_pipe_green.png",
+          "totalPixels": 256,
+          "transparentPixels": 104,
+          "exactMatches": 104,
+          "approximateMatches": 0,
+          "preservedPixels": 48,
+          "unmatchedColor": {
+            "mode": "nearest",
+            "distanceMetric": "oklch",
+            "threshold": 0.1
+          }
+        }
+      },
+      "totals": {
+        "exactMatches": 104,
+        "approximateMatches": 0,
+        "preservedPixels": 48,
+        "transparentPixels": 104
+      }
+    },
+    "light_blue": {
+      "files": {
+        "glass_fluid_pipe.png": {
+          "outputFile": "glass_fluid_pipe_light_blue.png",
+          "totalPixels": 256,
+          "transparentPixels": 104,
+          "exactMatches": 104,
+          "approximateMatches": 0,
+          "preservedPixels": 48,
+          "unmatchedColor": {
+            "mode": "nearest",
+            "distanceMetric": "oklch",
+            "threshold": 0.1
+          }
+        }
+      },
+      "totals": {
+        "exactMatches": 104,
+        "approximateMatches": 0,
+        "preservedPixels": 48,
+        "transparentPixels": 104
+      }
+    },
+    "light_gray": {
+      "files": {
+        "glass_fluid_pipe.png": {
+          "outputFile": "glass_fluid_pipe_light_gray.png",
+          "totalPixels": 256,
+          "transparentPixels": 104,
+          "exactMatches": 104,
+          "approximateMatches": 0,
+          "preservedPixels": 48,
+          "unmatchedColor": {
+            "mode": "nearest",
+            "distanceMetric": "oklch",
+            "threshold": 0.1
+          }
+        }
+      },
+      "totals": {
+        "exactMatches": 104,
+        "approximateMatches": 0,
+        "preservedPixels": 48,
+        "transparentPixels": 104
+      }
+    },
+    "lime": {
+      "files": {
+        "glass_fluid_pipe.png": {
+          "outputFile": "glass_fluid_pipe_lime.png",
+          "totalPixels": 256,
+          "transparentPixels": 104,
+          "exactMatches": 104,
+          "approximateMatches": 0,
+          "preservedPixels": 48,
+          "unmatchedColor": {
+            "mode": "nearest",
+            "distanceMetric": "oklch",
+            "threshold": 0.1
+          }
+        }
+      },
+      "totals": {
+        "exactMatches": 104,
+        "approximateMatches": 0,
+        "preservedPixels": 48,
+        "transparentPixels": 104
+      }
+    },
+    "magenta": {
+      "files": {
+        "glass_fluid_pipe.png": {
+          "outputFile": "glass_fluid_pipe_magenta.png",
+          "totalPixels": 256,
+          "transparentPixels": 104,
+          "exactMatches": 104,
+          "approximateMatches": 0,
+          "preservedPixels": 48,
+          "unmatchedColor": {
+            "mode": "nearest",
+            "distanceMetric": "oklch",
+            "threshold": 0.1
+          }
+        }
+      },
+      "totals": {
+        "exactMatches": 104,
+        "approximateMatches": 0,
+        "preservedPixels": 48,
+        "transparentPixels": 104
+      }
+    },
+    "orange": {
+      "files": {
+        "glass_fluid_pipe.png": {
+          "outputFile": "glass_fluid_pipe_orange.png",
+          "totalPixels": 256,
+          "transparentPixels": 104,
+          "exactMatches": 104,
+          "approximateMatches": 0,
+          "preservedPixels": 48,
+          "unmatchedColor": {
+            "mode": "nearest",
+            "distanceMetric": "oklch",
+            "threshold": 0.1
+          }
+        }
+      },
+      "totals": {
+        "exactMatches": 104,
+        "approximateMatches": 0,
+        "preservedPixels": 48,
+        "transparentPixels": 104
+      }
+    },
+    "pink": {
+      "files": {
+        "glass_fluid_pipe.png": {
+          "outputFile": "glass_fluid_pipe_pink.png",
+          "totalPixels": 256,
+          "transparentPixels": 104,
+          "exactMatches": 104,
+          "approximateMatches": 0,
+          "preservedPixels": 48,
+          "unmatchedColor": {
+            "mode": "nearest",
+            "distanceMetric": "oklch",
+            "threshold": 0.1
+          }
+        }
+      },
+      "totals": {
+        "exactMatches": 104,
+        "approximateMatches": 0,
+        "preservedPixels": 48,
+        "transparentPixels": 104
+      }
+    },
+    "purple": {
+      "files": {
+        "glass_fluid_pipe.png": {
+          "outputFile": "glass_fluid_pipe_purple.png",
+          "totalPixels": 256,
+          "transparentPixels": 104,
+          "exactMatches": 104,
+          "approximateMatches": 0,
+          "preservedPixels": 48,
+          "unmatchedColor": {
+            "mode": "nearest",
+            "distanceMetric": "oklch",
+            "threshold": 0.1
+          }
+        }
+      },
+      "totals": {
+        "exactMatches": 104,
+        "approximateMatches": 0,
+        "preservedPixels": 48,
+        "transparentPixels": 104
+      }
+    },
+    "red": {
+      "files": {
+        "glass_fluid_pipe.png": {
+          "outputFile": "glass_fluid_pipe_red.png",
+          "totalPixels": 256,
+          "transparentPixels": 104,
+          "exactMatches": 104,
+          "approximateMatches": 0,
+          "preservedPixels": 48,
+          "unmatchedColor": {
+            "mode": "nearest",
+            "distanceMetric": "oklch",
+            "threshold": 0.1
+          }
+        }
+      },
+      "totals": {
+        "exactMatches": 104,
+        "approximateMatches": 0,
+        "preservedPixels": 48,
+        "transparentPixels": 104
+      }
+    },
+    "white": {
+      "files": {
+        "glass_fluid_pipe.png": {
+          "outputFile": "glass_fluid_pipe_white.png",
+          "totalPixels": 256,
+          "transparentPixels": 104,
+          "exactMatches": 104,
+          "approximateMatches": 0,
+          "preservedPixels": 48,
+          "unmatchedColor": {
+            "mode": "nearest",
+            "distanceMetric": "oklch",
+            "threshold": 0.1
+          }
+        }
+      },
+      "totals": {
+        "exactMatches": 104,
+        "approximateMatches": 0,
+        "preservedPixels": 48,
+        "transparentPixels": 104
+      }
+    },
+    "yellow": {
+      "files": {
+        "glass_fluid_pipe.png": {
+          "outputFile": "glass_fluid_pipe_yellow.png",
+          "totalPixels": 256,
+          "transparentPixels": 104,
+          "exactMatches": 104,
+          "approximateMatches": 0,
+          "preservedPixels": 48,
+          "unmatchedColor": {
+            "mode": "nearest",
+            "distanceMetric": "oklch",
+            "threshold": 0.1
+          }
+        }
+      },
+      "totals": {
+        "exactMatches": 104,
+        "approximateMatches": 0,
+        "preservedPixels": 48,
+        "transparentPixels": 104
+      }
+    }
+  }
+}

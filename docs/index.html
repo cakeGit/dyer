@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dyer's Almanac</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-noise" aria-hidden="true"></div>
+  <div class="page-glow page-glow-left" aria-hidden="true"></div>
+  <div class="page-glow page-glow-right" aria-hidden="true"></div>
+
+  <main class="shell">
+    <section class="hero panel">
+      <p class="eyebrow">GitHub Pages color workshop</p>
+      <div class="hero-copy">
+        <div>
+          <h1>Dyer's Almanac</h1>
+          <p class="dek">
+            Feed it a sprite, pick a vat, and watch the palette flip in real time.
+            Every recipe below is derived from the repository&rsquo;s source mappings.
+          </p>
+        </div>
+        <div class="hero-badge">
+          <span id="mappingCount">0 vats loaded</span>
+          <strong>live recolor engine</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <aside class="panel controls">
+        <div class="panel-heading">
+          <p class="section-kicker">01 &mdash; Select a vat</p>
+          <h2>Recipe cabinet</h2>
+        </div>
+
+        <label class="field">
+          <span>Dye mapping</span>
+          <select id="dyeSelect" aria-label="Dye mapping"></select>
+        </label>
+
+        <div id="swatchGrid" class="swatch-grid" aria-label="Available dye mappings"></div>
+
+        <div class="panel-heading compact">
+          <p class="section-kicker">02 &mdash; Unmatched palette behavior</p>
+          <h2>How to treat strays</h2>
+        </div>
+
+        <label class="field">
+          <span>Fallback strategy</span>
+          <select id="unmatchedMode" aria-label="Unmatched palette behavior">
+            <option value="keep">Keep original color</option>
+            <option value="nearest" selected>Nearest mapped color</option>
+            <option value="approximate">Approximate tint blend</option>
+          </select>
+        </label>
+
+        <div class="threshold-stack">
+          <label class="field grow">
+            <span>Threshold</span>
+            <input id="thresholdRange" type="range" min="0" max="100" step="1" value="10">
+          </label>
+          <label class="field threshold-number">
+            <span class="visually-hidden">Threshold value</span>
+            <input id="thresholdNumber" type="number" min="0" max="100" step="1" value="10">
+          </label>
+        </div>
+
+        <p id="modeHint" class="mode-hint">
+          Nearest mapped color keeps unfamiliar shades useful as long as they stay within the selected threshold.
+        </p>
+
+        <div class="panel-heading compact">
+          <p class="section-kicker">03 &mdash; Bring your image</p>
+          <h2>Preview forge</h2>
+        </div>
+
+        <label class="upload-drop" for="imageInput">
+          <input id="imageInput" type="file" accept="image/png,image/*">
+          <strong>Drop or choose an image</strong>
+          <span>PNG works best, but any browser-readable image can be previewed.</span>
+        </label>
+
+        <div class="button-row">
+          <button id="loadDemo" class="button button-ghost" type="button">Load bundled demo</button>
+          <a id="downloadLink" class="button" href="#" download="dyed-preview.png">Download result</a>
+        </div>
+      </aside>
+
+      <section class="panel preview-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">04 &mdash; Compare the shift</p>
+          <h2>Before / after</h2>
+        </div>
+
+        <div class="preview-grid">
+          <figure class="preview-card">
+            <figcaption>
+              <span class="preview-label">Before</span>
+              <strong id="sourceLabel">Waiting for an image</strong>
+            </figcaption>
+            <div class="canvas-frame checkerboard">
+              <canvas id="beforeCanvas"></canvas>
+            </div>
+          </figure>
+
+          <figure class="preview-card after-card">
+            <figcaption>
+              <span class="preview-label">After</span>
+              <strong id="resultLabel">Choose a vat to begin</strong>
+            </figcaption>
+            <div class="canvas-frame checkerboard">
+              <canvas id="afterCanvas"></canvas>
+            </div>
+          </figure>
+        </div>
+
+        <div class="stats-ribbon">
+          <div>
+            <span class="stat-label">Exact matches</span>
+            <strong id="exactMatches">0%</strong>
+          </div>
+          <div>
+            <span class="stat-label">Fallback pixels</span>
+            <strong id="fallbackMatches">0%</strong>
+          </div>
+          <div>
+            <span class="stat-label">Untouched</span>
+            <strong id="untouchedPixels">0%</strong>
+          </div>
+        </div>
+
+        <div class="recipe-strip-wrap">
+          <div class="strip-heading">
+            <p class="section-kicker">Selected palette recipe</p>
+            <span id="thresholdBadge" class="threshold-badge">threshold 10</span>
+          </div>
+          <div id="recipeStrip" class="recipe-strip" aria-live="polite"></div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <template id="recipeChipTemplate">
+    <article class="recipe-chip">
+      <div class="recipe-colors">
+        <span class="color-pill color-source"></span>
+        <span class="recipe-arrow">&rarr;</span>
+        <span class="color-pill color-target"></span>
+      </div>
+      <div class="recipe-meta">
+        <strong class="recipe-name"></strong>
+        <span class="recipe-count"></span>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
