@@ -6,6 +6,9 @@ const state = {
   unmatchedMode: "nearest",
   sourceImage: null,
   sourceName: "Bundled demo",
+  mappingSource: "bundled",
+  // Preserved so the user can revert to bundled after applying custom mappings.
+  bundledState: { dyes: [], dyeMap: new Map() },
 };
 
 const ui = {
@@ -18,6 +21,7 @@ const ui = {
   imageInput: document.getElementById("imageInput"),
   loadDemo: document.getElementById("loadDemo"),
   downloadLink: document.getElementById("downloadLink"),
+  exportZipButton: document.getElementById("exportZipButton"),
   beforeCanvas: document.getElementById("beforeCanvas"),
   afterCanvas: document.getElementById("afterCanvas"),
   sourceLabel: document.getElementById("sourceLabel"),
@@ -29,6 +33,14 @@ const ui = {
   recipeStrip: document.getElementById("recipeStrip"),
   recipeChipTemplate: document.getElementById("recipeChipTemplate"),
   mappingCount: document.getElementById("mappingCount"),
+  mappingSource: document.getElementById("mappingSource"),
+  pairRowList: document.getElementById("pairRowList"),
+  pairRowTemplate: document.getElementById("pairRowTemplate"),
+  addPairRow: document.getElementById("addPairRow"),
+  deriveCustom: document.getElementById("deriveCustom"),
+  resetBundled: document.getElementById("resetBundled"),
+  bulkImportInput: document.getElementById("bulkImportInput"),
+  bulkImportResults: document.getElementById("bulkImportResults"),
 };
 
 const previewContexts = {
@@ -201,6 +213,7 @@ function renderDyePicker() {
   }
 
   ui.mappingCount.textContent = `${state.dyes.length} vats loaded`;
+  updateMappingSourceBadge();
 }
 
 function renderRecipeStrip() {
@@ -235,15 +248,16 @@ function drawImageToCanvas(image, canvas, context) {
   context.drawImage(image, 0, 0);
 }
 
-function findNearestEntry(rgb) {
-  if (!state.currentDye.entries.length) {
+function findNearestEntry(rgb, dye) {
+  const activeDye = dye || state.currentDye;
+  if (!activeDye.entries.length) {
     return null;
   }
 
   const sourceOklch = rgbToOklch(rgb);
   let bestMatch = null;
 
-  for (const entry of state.currentDye.entries) {
+  for (const entry of activeDye.entries) {
     const distance = oklchDistance(sourceOklch, entry.sourceOklch);
     if (!bestMatch || distance < bestMatch.distance) {
       bestMatch = { distance, entry };
@@ -277,20 +291,7 @@ function transformPixel(pixel, nearest) {
   return { rgb: pixel, type: "untouched" };
 }
 
-function transformCurrentImage() {
-  const { sourceImage, currentDye } = state;
-  if (!sourceImage || !currentDye) {
-    return null;
-  }
-
-  drawImageToCanvas(sourceImage, ui.beforeCanvas, previewContexts.before);
-  ui.afterCanvas.width = sourceImage.width;
-  ui.afterCanvas.height = sourceImage.height;
-  previewContexts.after.clearRect(0, 0, ui.afterCanvas.width, ui.afterCanvas.height);
-  previewContexts.after.imageSmoothingEnabled = false;
-  previewContexts.after.drawImage(sourceImage, 0, 0);
-
-  const imageData = previewContexts.after.getImageData(0, 0, ui.afterCanvas.width, ui.afterCanvas.height);
+function transformImageDataWithDye(imageData, dye) {
   const { data } = imageData;
   const stats = {
     exact: 0,
@@ -307,7 +308,7 @@ function transformCurrentImage() {
 
     stats.opaque += 1;
     const rgb = [data[index], data[index + 1], data[index + 2]];
-    const exact = currentDye.exactMap.get(rgb.join(","));
+    const exact = dye.exactMap.get(rgb.join(","));
 
     if (exact) {
       data[index] = exact[0];
@@ -317,13 +318,31 @@ function transformCurrentImage() {
       continue;
     }
 
-    const transformed = transformPixel(rgb, findNearestEntry(rgb));
+    const transformed = transformPixel(rgb, findNearestEntry(rgb, dye));
     data[index] = transformed.rgb[0];
     data[index + 1] = transformed.rgb[1];
     data[index + 2] = transformed.rgb[2];
     stats[transformed.type] += 1;
   }
 
+  return stats;
+}
+
+function transformCurrentImage() {
+  const { sourceImage, currentDye } = state;
+  if (!sourceImage || !currentDye) {
+    return null;
+  }
+
+  drawImageToCanvas(sourceImage, ui.beforeCanvas, previewContexts.before);
+  ui.afterCanvas.width = sourceImage.width;
+  ui.afterCanvas.height = sourceImage.height;
+  previewContexts.after.clearRect(0, 0, ui.afterCanvas.width, ui.afterCanvas.height);
+  previewContexts.after.imageSmoothingEnabled = false;
+  previewContexts.after.drawImage(sourceImage, 0, 0);
+
+  const imageData = previewContexts.after.getImageData(0, 0, ui.afterCanvas.width, ui.afterCanvas.height);
+  const stats = transformImageDataWithDye(imageData, currentDye);
   previewContexts.after.putImageData(imageData, 0, 0);
   return stats;
 }
@@ -345,6 +364,544 @@ function refreshDownloadLink() {
   ui.downloadLink.href = ui.afterCanvas.toDataURL("image/png");
   const dyeSuffix = state.currentDye ? state.currentDye.key : "preview";
   ui.downloadLink.download = `${state.sourceName.replace(/\.[^.]+$/, "")}_${dyeSuffix}.png`;
+}
+
+// ─── Bulk ZIP export ──────────────────────────────────────────────────────────
+
+async function exportAllAsZip() {
+  if (!state.sourceImage) {
+    window.alert("Load a source image first.");
+    return;
+  }
+  if (!state.dyes.length) {
+    window.alert("No dye mappings are loaded.");
+    return;
+  }
+  // JSZip is loaded via CDN; guard against offline / blocked script.
+  if (typeof JSZip === "undefined") {
+    window.alert("JSZip library did not load. Check your internet connection and reload the page.");
+    return;
+  }
+
+  const button = ui.exportZipButton;
+  button.disabled = true;
+  const origText = button.textContent;
+
+  try {
+    const zip = new JSZip();
+    const baseName = state.sourceName.replace(/\.[^.]+$/, "");
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d", { willReadFrequently: true });
+
+    for (let i = 0; i < state.dyes.length; i++) {
+      const dye = state.dyes[i];
+      button.textContent = `Exporting ${i + 1} / ${state.dyes.length}\u2026`;
+
+      canvas.width = state.sourceImage.width;
+      canvas.height = state.sourceImage.height;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.imageSmoothingEnabled = false;
+      ctx.drawImage(state.sourceImage, 0, 0);
+
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      transformImageDataWithDye(imageData, dye);
+      ctx.putImageData(imageData, 0, 0);
+
+      const blob = await new Promise((resolve, reject) => {
+        canvas.toBlob((value) => {
+          if (value) {
+            resolve(value);
+            return;
+          }
+
+          reject(new Error(`Failed to encode "${dye.key}" as PNG.`));
+        }, "image/png");
+      });
+      zip.file(`${baseName}_${dye.key}.png`, blob);
+
+      // Yield to keep the browser responsive between frames.
+      await new Promise((resolve) => setTimeout(resolve, 0));
+    }
+
+    button.textContent = "Building ZIP\u2026";
+    const zipBlob = await zip.generateAsync({ type: "blob" });
+    const url = URL.createObjectURL(zipBlob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `${baseName}_all_dyes.zip`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  } finally {
+    button.disabled = false;
+    button.textContent = origText;
+  }
+}
+
+// ─── Custom reference derivation ─────────────────────────────────────────────
+
+function getImagePixelData(image) {
+  const canvas = document.createElement("canvas");
+  canvas.width = image.width;
+  canvas.height = image.height;
+  const ctx = canvas.getContext("2d", { willReadFrequently: true });
+  ctx.drawImage(image, 0, 0);
+  return ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+}
+
+function readFileAsImage(file) {
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => { URL.revokeObjectURL(url); resolve(img); };
+    img.onerror = () => { URL.revokeObjectURL(url); reject(new Error(`Cannot load "${file.name}".`)); };
+    img.src = url;
+  });
+}
+
+// Mirrors processing/core/palette-mapping.js buildPaletteMapping() for the browser.
+// Accepts multiple original+variant pairs (for one dye) to merge their tallies.
+function buildPaletteMappingFromPairs(pairs) {
+  const tally = new Map();    // srcKey -> Map(tgtKey -> count)
+  const srcCounts = new Map(); // srcKey -> total sample count
+
+  for (const { original, variant } of pairs) {
+    if (original.width !== variant.width || original.height !== variant.height) {
+      throw new Error(
+        `Reference pair dimensions must match (${original.width}x${original.height} vs ${variant.width}x${variant.height}).`,
+      );
+    }
+
+    const origPixels = getImagePixelData(original);
+    const varPixels = getImagePixelData(variant);
+    const len = origPixels.length;
+
+    for (let i = 0; i < len; i += 4) {
+      if (origPixels[i + 3] === 0) {
+        continue; // skip fully-transparent source pixels
+      }
+
+      const or = origPixels[i], og = origPixels[i + 1], ob = origPixels[i + 2];
+      const vr = varPixels[i], vg = varPixels[i + 1], vb = varPixels[i + 2];
+      const srcKey = `${or},${og},${ob}`;
+      const tgtKey = `${vr},${vg},${vb}`;
+
+      if (!tally.has(srcKey)) {
+        tally.set(srcKey, new Map());
+      }
+      const t = tally.get(srcKey);
+      t.set(tgtKey, (t.get(tgtKey) || 0) + 1);
+      srcCounts.set(srcKey, (srcCounts.get(srcKey) || 0) + 1);
+    }
+  }
+
+  const sourceToTarget = [];
+  const approximatePalette = [];
+
+  for (const [srcKey, tgtMap] of [...tally.entries()].sort()) {
+    let bestTarget = null;
+    let bestCount = 0;
+    for (const [tgtKey, count] of tgtMap) {
+      if (count > bestCount) {
+        bestCount = count;
+        bestTarget = tgtKey;
+      }
+    }
+    if (!bestTarget) {
+      continue;
+    }
+
+    const srcRgb = parseRgbKey(srcKey);
+    const tgtRgb = parseRgbKey(bestTarget);
+    const total = srcCounts.get(srcKey) || 0;
+
+    sourceToTarget.push({ source: srcKey, target: bestTarget, sampleCount: total, chosenCount: bestCount });
+    approximatePalette.push({
+      source: srcKey,
+      target: bestTarget,
+      sourceRgb: srcRgb,
+      targetRgb: tgtRgb,
+      sourceOklch: rgbToOklch(srcRgb),
+      sampleCount: total,
+      chosenCount: bestCount,
+    });
+  }
+
+  return { sourceToTarget, approximatePalette };
+}
+
+function addPairRow() {
+  const row = ui.pairRowTemplate.content.cloneNode(true).firstElementChild;
+
+  row.querySelector(".pair-remove").addEventListener("click", () => {
+    row.remove();
+    // Always keep at least one row so the section stays usable.
+    if (!ui.pairRowList.querySelector(".pair-row")) {
+      addPairRow();
+    }
+  });
+
+  for (const fileInput of row.querySelectorAll("input[type='file']")) {
+    const label = fileInput.closest(".upload-drop-sm").querySelector(".pair-file-label");
+    fileInput.addEventListener("change", () => {
+      label.textContent = fileInput.files[0]?.name ?? "Choose image";
+    });
+  }
+
+  ui.pairRowList.append(row);
+}
+
+// ─── Bulk import variants ─────────────────────────────────────────────────────
+
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+// Multi-word names must come first so "light_blue" is tested before "blue".
+const KNOWN_DYE_NAMES = [
+  "light_blue", "light_gray", "light_grey",
+  "black", "blue", "brown", "cyan", "gray", "grey",
+  "green", "lime", "magenta", "orange", "pink", "purple",
+  "red", "white", "yellow",
+];
+
+function detectDyeFromFilename(filename) {
+  const base = filename.toLowerCase()
+    .replace(/\.[^.]+$/, "")   // strip extension
+    .replace(/[\s-]/g, "_");   // normalise spaces and hyphens to underscores
+
+  for (const dye of KNOWN_DYE_NAMES) {
+    // Only match when the dye name appears as a whole token (adjacent to a
+    // non-alpha character or a string boundary), so "blue" does not fire on
+    // "lightblue" and "gray" does not fire on "light_gray".
+    const re = new RegExp(`(?:^|[^a-z])${dye}(?:[^a-z]|$)`);
+    if (re.test(base)) {
+      if (dye === "grey") { return "gray"; }
+      if (dye === "light_grey") { return "light_gray"; }
+      return dye;
+    }
+  }
+  return null;
+}
+
+function fileStemWithoutDye(filename, dyeName) {
+  const base = filename.toLowerCase()
+    .replace(/\.[^.]+$/, "")
+    .replace(/[\s-]/g, "_");
+
+  // Canonical names may differ from the token in the filename (grey ↔ gray).
+  const greyAliases = { gray: "grey", light_gray: "light_grey" };
+  const alt = greyAliases[dyeName];
+  // Use whichever form actually appears in the filename.
+  const token = (alt && new RegExp(`(?:^|_)${alt}(?:_|$)`).test(base)) ? alt : dyeName;
+
+  // Remove the token together with any surrounding separator underscores,
+  // then collapse runs of underscores and strip leading/trailing ones.
+  const cleaned = base
+    .replace(new RegExp(`(?:^|_)${token}(?:_|$)`, "g"), "_")
+    .replace(/^_+|_+$/g, "")
+    .replace(/_+/g, "_");
+
+  return cleaned || base;
+}
+
+function parseBulkFiles(files) {
+  const variants = [];   // { file, dyeName, stem }
+  const originals = [];  // { file, stem }
+
+  for (const file of files) {
+    const dyeName = detectDyeFromFilename(file.name);
+    if (dyeName) {
+      variants.push({ file, dyeName, stem: fileStemWithoutDye(file.name, dyeName) });
+    } else {
+      const stem = file.name.toLowerCase()
+        .replace(/\.[^.]+$/, "")
+        .replace(/[\s-]/g, "_");
+      originals.push({ file, stem });
+    }
+  }
+
+  const matched = [];   // { dyeName, variantFile, originalFile, confidence }
+  const unmatched = []; // { file, reason }
+
+  for (const variant of variants) {
+    if (originals.length === 0) {
+      unmatched.push({ file: variant.file, reason: "No original files selected" });
+      continue;
+    }
+
+    let bestOriginal = null;
+    let confidence = "auto";
+
+    if (originals.length === 1) {
+      bestOriginal = originals[0];
+      confidence = "single-original";
+    } else {
+      // Prefer an original whose stem exactly equals the variant's stem.
+      const exactMatch = originals.find((o) => o.stem === variant.stem);
+      // Fall back to a prefix match (one name starts with the other).
+      const prefixMatch = originals.find((o) =>
+        o.stem && variant.stem &&
+        (variant.stem.startsWith(o.stem) || o.stem.startsWith(variant.stem)),
+      );
+
+      if (exactMatch) {
+        bestOriginal = exactMatch;
+        confidence = "stem-match";
+      } else if (prefixMatch) {
+        bestOriginal = prefixMatch;
+        confidence = "prefix-match";
+      } else {
+        unmatched.push({
+          file: variant.file,
+          reason: `${originals.length} possible originals — stem "${variant.stem}" matched none`,
+        });
+        continue;
+      }
+    }
+
+    matched.push({
+      dyeName: variant.dyeName,
+      variantFile: variant.file,
+      originalFile: bestOriginal.file,
+      confidence,
+    });
+  }
+
+  // Originals with no variant end up unmatched so the user can decide what to do.
+  const usedOriginals = new Set(matched.map((m) => m.originalFile));
+  for (const original of originals) {
+    if (!usedOriginals.has(original.file)) {
+      unmatched.push({ file: original.file, reason: "No dye variants detected for this file" });
+    }
+  }
+
+  return { matched, unmatched };
+}
+
+function renderBulkImportResults({ matched, unmatched }) {
+  const container = ui.bulkImportResults;
+  container.hidden = false;
+  container.innerHTML = "";
+
+  if (matched.length === 0 && unmatched.length === 0) {
+    const msg = document.createElement("p");
+    msg.className = "bulk-empty";
+    msg.textContent = "No image files were selected.";
+    container.append(msg);
+    return;
+  }
+
+  if (matched.length > 0) {
+    const heading = document.createElement("p");
+    heading.className = "bulk-section-heading";
+    heading.textContent = `${matched.length} pair${matched.length !== 1 ? "s" : ""} auto-detected:`;
+    container.append(heading);
+
+    const table = document.createElement("table");
+    table.className = "bulk-table";
+    table.innerHTML = `<thead><tr>
+      <th>Dye</th><th>Original</th><th>Variant</th><th></th>
+    </tr></thead>`;
+    const tbody = document.createElement("tbody");
+    const confidenceLabel = {
+      "stem-match": "✓ stem",
+      "prefix-match": "~ prefix",
+      "single-original": "✓ only original",
+      "auto": "✓ auto",
+    };
+    for (const row of matched) {
+      const tr = document.createElement("tr");
+      const conf = confidenceLabel[row.confidence] || row.confidence;
+      const isExact = row.confidence === "stem-match" || row.confidence === "auto";
+      tr.innerHTML = `
+        <td><span class="bulk-dye-tag">${row.dyeName.replace(/_/g, "\u200B_")}</span></td>
+        <td class="bulk-filename">${escapeHtml(row.originalFile.name)}</td>
+        <td class="bulk-filename">${escapeHtml(row.variantFile.name)}</td>
+        <td><span class="bulk-confidence ${isExact ? "bulk-confidence-exact" : "bulk-confidence-approx"}">${conf}</span></td>
+      `;
+      tbody.append(tr);
+    }
+    table.append(tbody);
+    container.append(table);
+  }
+
+  if (unmatched.length > 0) {
+    const heading = document.createElement("p");
+    heading.className = "bulk-section-heading bulk-section-heading-warn";
+    heading.textContent = `${unmatched.length} unmatched file${unmatched.length !== 1 ? "s" : ""} — add manually if needed:`;
+    container.append(heading);
+
+    const list = document.createElement("ul");
+    list.className = "bulk-unmatched-list";
+    for (const item of unmatched) {
+      const li = document.createElement("li");
+      li.innerHTML = `<span class="bulk-filename">${escapeHtml(item.file.name)}</span><span class="bulk-reason">${escapeHtml(item.reason)}</span>`;
+      list.append(li);
+    }
+    container.append(list);
+  }
+
+  if (matched.length > 0) {
+    const applyBtn = document.createElement("button");
+    applyBtn.type = "button";
+    applyBtn.className = "button bulk-apply-button";
+    applyBtn.textContent = `Populate ${matched.length} row${matched.length !== 1 ? "s" : ""} from detected`;
+    applyBtn.addEventListener("click", () => applyBulkResults({ matched, unmatched }));
+    container.append(applyBtn);
+  }
+}
+
+function setFileInputFile(input, file) {
+  try {
+    const dt = new DataTransfer();
+    dt.items.add(file);
+    input.files = dt.files;
+  } catch {
+    // DataTransfer not supported: the file label is still set visually, and the
+    // user can re-choose the file if needed before clicking "Derive & apply".
+  }
+}
+
+function applyBulkResults({ matched }) {
+  // Replace all existing rows with the auto-detected ones.
+  ui.pairRowList.innerHTML = "";
+
+  for (const entry of matched) {
+    const row = ui.pairRowTemplate.content.cloneNode(true).firstElementChild;
+
+    row.querySelector(".pair-name").value = entry.dyeName;
+
+    const origInput = row.querySelector(".pair-original");
+    const varInput = row.querySelector(".pair-variant");
+    setFileInputFile(origInput, entry.originalFile);
+    setFileInputFile(varInput, entry.variantFile);
+
+    origInput.closest(".upload-drop-sm").querySelector(".pair-file-label").textContent = entry.originalFile.name;
+    varInput.closest(".upload-drop-sm").querySelector(".pair-file-label").textContent = entry.variantFile.name;
+
+    row.querySelector(".pair-remove").addEventListener("click", () => {
+      row.remove();
+      if (!ui.pairRowList.querySelector(".pair-row")) {
+        addPairRow();
+      }
+    });
+
+    for (const fileInput of row.querySelectorAll("input[type='file']")) {
+      const label = fileInput.closest(".upload-drop-sm").querySelector(".pair-file-label");
+      fileInput.addEventListener("change", () => {
+        label.textContent = fileInput.files[0]?.name ?? "Choose image";
+      });
+    }
+
+    ui.pairRowList.append(row);
+  }
+
+  ui.bulkImportResults.hidden = true;
+  ui.bulkImportInput.value = "";
+  ui.pairRowList.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+async function deriveCustomMappings() {
+  const rows = [...ui.pairRowList.querySelectorAll(".pair-row")];
+  const groups = new Map(); // normalised name -> [{original, variant}]
+  const errors = [];
+
+  for (const row of rows) {
+    const rawName = row.querySelector(".pair-name").value.trim();
+    const origFile = row.querySelector(".pair-original").files[0];
+    const varFile = row.querySelector(".pair-variant").files[0];
+
+    if (!rawName && !origFile && !varFile) {
+      continue; // silently skip blank rows
+    }
+
+    if (!rawName) { errors.push("Every filled row needs a dye name."); continue; }
+    if (!origFile) { errors.push(`"${rawName}": choose an original image.`); continue; }
+    if (!varFile) { errors.push(`"${rawName}": choose a dyed-variant image.`); continue; }
+
+    const name = rawName.toLowerCase().replace(/\s+/g, "_");
+
+    try {
+      const [origImg, varImg] = await Promise.all([readFileAsImage(origFile), readFileAsImage(varFile)]);
+      if (!groups.has(name)) {
+        groups.set(name, []);
+      }
+      groups.get(name).push({ original: origImg, variant: varImg });
+    } catch (err) {
+      errors.push(err.message);
+    }
+  }
+
+  if (errors.length) {
+    window.alert(`Fix these issues before deriving mappings:\n\n${errors.join("\n")}`);
+    return;
+  }
+
+  if (groups.size === 0) {
+    window.alert("Fill in at least one complete row (dye name + original image + variant image).");
+    return;
+  }
+
+  const customDyes = [];
+  const buildErrors = [];
+
+  for (const [name, pairs] of groups) {
+    let mapping;
+    try {
+      mapping = buildPaletteMappingFromPairs(pairs);
+    } catch (err) {
+      buildErrors.push(`"${name}": ${err.message}`);
+      continue;
+    }
+    if (mapping.sourceToTarget.length === 0) {
+      buildErrors.push(`"${name}": no color differences found — are the original and variant the same image?`);
+      continue;
+    }
+    customDyes.push(buildDye(name, mapping));
+  }
+
+  if (buildErrors.length) {
+    window.alert(buildErrors.join("\n"));
+    return;
+  }
+
+  state.dyes = customDyes;
+  state.dyeMap = new Map(customDyes.map((d) => [d.key, d]));
+  state.mappingSource = "custom";
+
+  renderDyePicker();
+  setCurrentDye(state.dyes[0].key);
+}
+
+function resetToBundledMappings() {
+  state.dyes = state.bundledState.dyes;
+  state.dyeMap = state.bundledState.dyeMap;
+  state.mappingSource = "bundled";
+
+  renderDyePicker();
+  if (state.dyes.length) {
+    setCurrentDye(state.dyes[0].key);
+  }
+}
+
+function updateMappingSourceBadge() {
+  if (!ui.mappingSource) {
+    return;
+  }
+  if (state.mappingSource === "custom") {
+    const n = state.dyes.length;
+    ui.mappingSource.textContent = `custom \u2014 ${n} dye${n !== 1 ? "s" : ""}`;
+    ui.mappingSource.classList.add("is-custom");
+  } else {
+    ui.mappingSource.textContent = "bundled";
+    ui.mappingSource.classList.remove("is-custom");
+  }
 }
 
 function renderPreview() {
@@ -396,6 +953,11 @@ async function loadMappings() {
   if (!state.dyes.length) {
     throw new Error("No dye mappings were found.");
   }
+
+  // Preserve a copy for later reset.
+  state.bundledState = { dyes: state.dyes, dyeMap: state.dyeMap };
+  state.mappingSource = "bundled";
+
   renderDyePicker();
   setCurrentDye(state.dyes[0].key);
 }
@@ -436,11 +998,33 @@ function attachEvents() {
   ui.loadDemo.addEventListener("click", async () => {
     await setSourceImage("assets/demo.png", "Bundled demo");
   });
+
+  ui.exportZipButton.addEventListener("click", exportAllAsZip);
+
+  ui.addPairRow.addEventListener("click", addPairRow);
+
+  ui.bulkImportInput.addEventListener("change", (event) => {
+    const files = [...(event.target.files || [])];
+    if (!files.length) { return; }
+    renderBulkImportResults(parseBulkFiles(files));
+  });
+
+  ui.deriveCustom.addEventListener("click", async () => {
+    ui.deriveCustom.disabled = true;
+    try {
+      await deriveCustomMappings();
+    } finally {
+      ui.deriveCustom.disabled = false;
+    }
+  });
+
+  ui.resetBundled.addEventListener("click", resetToBundledMappings);
 }
 
 async function boot() {
   attachEvents();
   updateModeHint();
+  addPairRow(); // seed the custom-reference section with one empty row
   await loadMappings();
   await setSourceImage("assets/demo.png", "Bundled demo");
 }

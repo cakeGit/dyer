@@ -25,6 +25,7 @@
         </div>
         <div class="hero-badge">
           <span id="mappingCount">0 vats loaded</span>
+          <span id="mappingSource" class="mapping-source-pill">bundled</span>
           <strong>live recolor engine</strong>
         </div>
       </div>
@@ -88,11 +89,40 @@
           <button id="loadDemo" class="button button-ghost" type="button">Load bundled demo</button>
           <a id="downloadLink" class="button" href="#" download="dyed-preview.png">Download result</a>
         </div>
+        <button id="exportZipButton" class="button button-ghost export-zip-button" type="button">Export all as ZIP</button>
+
+        <div class="panel-heading compact">
+          <p class="section-kicker">04 &mdash; Custom reference</p>
+          <h2>Derive your own</h2>
+        </div>
+
+        <p class="mode-hint">
+          Upload original&nbsp;+&nbsp;dyed&nbsp;variant pairs to derive custom palette mappings in-browser.
+          Each row defines one dye. Multiple rows with the same name are merged.
+          Use <strong>Reset to bundled</strong> to restore the built-in recipes.
+        </p>
+
+        <label class="upload-drop upload-drop-bulk" for="bulkImportInput">
+          <input id="bulkImportInput" type="file" accept="image/*" multiple>
+          <strong>Bulk import variants&hellip;</strong>
+          <span>Select originals&nbsp;+&nbsp;many variant images at once &mdash; dye names are auto-detected from filenames (e.g.&nbsp;<code>pipes_blue.png</code>).</span>
+        </label>
+
+        <div id="bulkImportResults" class="bulk-results" hidden></div>
+
+        <div id="pairRowList" class="pair-row-list"></div>
+
+        <button id="addPairRow" class="button button-ghost export-zip-button" type="button">+ Add another pair</button>
+
+        <div class="button-row ref-action-row">
+          <button id="deriveCustom" class="button" type="button">Derive &amp; apply</button>
+          <button id="resetBundled" class="button button-ghost" type="button">Reset to bundled</button>
+        </div>
       </aside>
 
       <section class="panel preview-panel">
         <div class="panel-heading">
-          <p class="section-kicker">04 &mdash; Compare the shift</p>
+          <p class="section-kicker">05 &mdash; Compare the shift</p>
           <h2>Before / after</h2>
         </div>
 
@@ -158,6 +188,29 @@
     </article>
   </template>
 
+  <template id="pairRowTemplate">
+    <div class="pair-row">
+      <label class="field">
+        <span>Dye name</span>
+        <input type="text" class="pair-name" placeholder="e.g. blue" autocomplete="off" spellcheck="false">
+      </label>
+      <div class="pair-row-files">
+        <label class="upload-drop upload-drop-sm">
+          <input type="file" class="pair-original" accept="image/*">
+          <strong>Original</strong>
+          <span class="pair-file-label">Choose image</span>
+        </label>
+        <label class="upload-drop upload-drop-sm">
+          <input type="file" class="pair-variant" accept="image/*">
+          <strong>Dyed variant</strong>
+          <span class="pair-file-label">Choose image</span>
+        </label>
+      </div>
+      <button type="button" class="pair-remove" aria-label="Remove this pair row">&times;</button>
+    </div>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
   <script src="app.js" defer></script>
 </body>
 </html>
