@@ -1,9 +1,18 @@
 "use strict";
 
 const DEFAULT_UNMATCHED_COLOR_CONFIG = Object.freeze({
-  mode: "nearest",
+  mode: "blend",
   distanceMetric: "oklch",
   threshold: 0.1,
+  blendSampleCount: 6,
+});
+
+const MODE_ALIASES = Object.freeze({
+  approximate: "blend",
+  blend: "blend",
+  keep: "preserve",
+  nearest: "nearest",
+  preserve: "preserve",
 });
 
 function normalizeUnmatchedColorConfig(config = {}) {
@@ -11,16 +20,18 @@ function normalizeUnmatchedColorConfig(config = {}) {
     ...DEFAULT_UNMATCHED_COLOR_CONFIG,
     ...(config || {}),
   };
+  const mode = MODE_ALIASES[normalized.mode];
 
-  if (!["preserve", "nearest"].includes(normalized.mode)) {
+  if (!mode) {
     throw new Error(`Unsupported unmatched color mode: ${normalized.mode}`);
   }
 
-  if (normalized.mode === "preserve") {
+  if (mode === "preserve") {
     return {
       mode: "preserve",
       distanceMetric: DEFAULT_UNMATCHED_COLOR_CONFIG.distanceMetric,
       threshold: null,
+      blendSampleCount: DEFAULT_UNMATCHED_COLOR_CONFIG.blendSampleCount,
     };
   }
 
@@ -30,9 +41,10 @@ function normalizeUnmatchedColorConfig(config = {}) {
 
   if (normalized.threshold == null) {
     return {
-      mode: "nearest",
+      mode,
       distanceMetric: normalized.distanceMetric,
       threshold: null,
+      blendSampleCount: normalizeBlendSampleCount(normalized.blendSampleCount),
     };
   }
 
@@ -41,14 +53,24 @@ function normalizeUnmatchedColorConfig(config = {}) {
   }
 
   return {
-    mode: "nearest",
+    mode,
     distanceMetric: normalized.distanceMetric,
     threshold: normalized.threshold,
+    blendSampleCount: normalizeBlendSampleCount(normalized.blendSampleCount),
   };
 }
 
+function normalizeBlendSampleCount(value) {
+  const sampleCount = Number(value);
+  if (!Number.isFinite(sampleCount) || sampleCount < 1) {
+    return DEFAULT_UNMATCHED_COLOR_CONFIG.blendSampleCount;
+  }
+
+  return Math.max(1, Math.round(sampleCount));
+}
+
 function shouldApproximateUnmatchedColor(config, distance) {
-  if (config.mode !== "nearest") {
+  if (config.mode === "preserve") {
     return false;
   }
 

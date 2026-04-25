@@ -3,39 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dyer's Almanac</title>
+  <title>Texture Dyer</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="page-noise" aria-hidden="true"></div>
-  <div class="page-glow page-glow-left" aria-hidden="true"></div>
-  <div class="page-glow page-glow-right" aria-hidden="true"></div>
-
   <main class="shell">
-    <section class="hero panel">
-      <p class="eyebrow">GitHub Pages color workshop</p>
-      <div class="hero-copy">
-        <div>
-          <h1>Dyer's Almanac</h1>
-          <p class="dek">
-            Feed it a sprite, pick a vat, and watch the palette flip in real time.
-            Every recipe below is derived from the repository&rsquo;s source mappings.
-          </p>
-        </div>
-        <div class="hero-badge">
-          <span id="mappingCount">0 vats loaded</span>
-          <span id="mappingSource" class="mapping-source-pill">bundled</span>
-          <strong>live recolor engine</strong>
-        </div>
+    <header class="app-header">
+      <div>
+        <h1>Texture Dyer</h1>
+        <p>Recolor pixel textures from palette reference maps.</p>
       </div>
-    </section>
+      <div class="mapping-status">
+        <span id="mappingCount">0 mappings loaded</span>
+        <span id="mappingSource" class="mapping-source-pill">bundled</span>
+      </div>
+    </header>
 
     <section class="workspace">
       <aside class="panel controls">
         <div class="panel-heading">
-          <p class="section-kicker">01 &mdash; Select a vat</p>
-          <h2>Recipe cabinet</h2>
+          <h2>Controls</h2>
         </div>
 
         <label class="field">
@@ -46,16 +34,15 @@
         <div id="swatchGrid" class="swatch-grid" aria-label="Available dye mappings"></div>
 
         <div class="panel-heading compact">
-          <p class="section-kicker">02 &mdash; Unmatched palette behavior</p>
-          <h2>How to treat strays</h2>
+          <h3>Palette behavior</h3>
         </div>
 
         <label class="field">
-          <span>Fallback strategy</span>
+          <span>Stray colors</span>
           <select id="unmatchedMode" aria-label="Unmatched palette behavior">
             <option value="keep">Keep original color</option>
-            <option value="nearest" selected>Nearest mapped color</option>
-            <option value="approximate">Approximate tint blend</option>
+            <option value="nearest">Nearest mapped color</option>
+            <option value="blend" selected>Palette blend</option>
           </select>
         </label>
 
@@ -75,15 +62,27 @@
         </p>
 
         <div class="panel-heading compact">
-          <p class="section-kicker">03 &mdash; Bring your image</p>
-          <h2>Preview forge</h2>
+          <h3>Source</h3>
         </div>
 
-        <label class="upload-drop" for="imageInput">
-          <input id="imageInput" type="file" accept="image/png,image/*">
-          <strong>Drop or choose an image</strong>
-          <span>PNG works best, but any browser-readable image can be previewed.</span>
-        </label>
+        <div class="upload-grid">
+          <label class="upload-drop" for="imageInput">
+            <input id="imageInput" type="file" accept="image/png,image/*">
+            <strong>Source image</strong>
+            <span>Drop or choose an image.</span>
+          </label>
+
+          <label class="upload-drop" for="maskInput">
+            <input id="maskInput" type="file" accept="image/png,image/*">
+            <strong>Mask</strong>
+            <span>White transforms, black stays original.</span>
+          </label>
+        </div>
+
+        <div class="mask-row">
+          <span id="maskLabel">No mask</span>
+          <button id="clearMask" class="text-button" type="button" hidden>Clear mask</button>
+        </div>
 
         <div class="button-row">
           <button id="loadDemo" class="button button-ghost" type="button">Load bundled demo</button>
@@ -92,20 +91,18 @@
         <button id="exportZipButton" class="button button-ghost export-zip-button" type="button">Export all as ZIP</button>
 
         <div class="panel-heading compact">
-          <p class="section-kicker">04 &mdash; Custom reference</p>
-          <h2>Derive your own</h2>
+          <h3>Custom mappings</h3>
         </div>
 
         <p class="mode-hint">
-          Upload original&nbsp;+&nbsp;dyed&nbsp;variant pairs to derive custom palette mappings in-browser.
-          Each row defines one dye. Multiple rows with the same name are merged.
-          Use <strong>Reset to bundled</strong> to restore the built-in recipes.
+          Add original + dyed variant pairs to derive mappings in-browser.
+          Rows with the same dye name are merged.
         </p>
 
         <label class="upload-drop upload-drop-bulk" for="bulkImportInput">
           <input id="bulkImportInput" type="file" accept="image/*" multiple>
-          <strong>Bulk import variants&hellip;</strong>
-          <span>Select originals&nbsp;+&nbsp;many variant images at once &mdash; dye names are auto-detected from filenames (e.g.&nbsp;<code>pipes_blue.png</code>).</span>
+          <strong>Bulk import variants</strong>
+          <span>Select originals + variant images; dye names are read from filenames like <code>pipes_blue.png</code>.</span>
         </label>
 
         <div id="bulkImportResults" class="bulk-results" hidden></div>
@@ -122,8 +119,7 @@
 
       <section class="panel preview-panel">
         <div class="panel-heading">
-          <p class="section-kicker">05 &mdash; Compare the shift</p>
-          <h2>Before / after</h2>
+          <h2>Preview</h2>
         </div>
 
         <div class="preview-grid">
@@ -140,7 +136,7 @@
           <figure class="preview-card after-card">
             <figcaption>
               <span class="preview-label">After</span>
-              <strong id="resultLabel">Choose a vat to begin</strong>
+              <strong id="resultLabel">Choose a mapping to begin</strong>
             </figcaption>
             <div class="canvas-frame checkerboard">
               <canvas id="afterCanvas"></canvas>
@@ -154,7 +150,7 @@
             <strong id="exactMatches">0%</strong>
           </div>
           <div>
-            <span class="stat-label">Fallback pixels</span>
+            <span class="stat-label">Blended / fallback</span>
             <strong id="fallbackMatches">0%</strong>
           </div>
           <div>
@@ -165,7 +161,7 @@
 
         <div class="recipe-strip-wrap">
           <div class="strip-heading">
-            <p class="section-kicker">Selected palette recipe</p>
+            <h3>Palette samples</h3>
             <span id="thresholdBadge" class="threshold-badge">threshold 10</span>
           </div>
           <div id="recipeStrip" class="recipe-strip" aria-live="polite"></div>

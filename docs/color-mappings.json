@@ -1,17 +1,19 @@
 {
   "version": 2,
-  "generatedAt": "2026-03-29T17:26:42.192Z",
+  "generatedAt": "2026-04-25T15:23:21.625Z",
   "unmatchedColorDefaults": {
-    "mode": "nearest",
+    "mode": "blend",
     "distanceMetric": "oklch",
-    "threshold": 0.1
+    "threshold": 0.1,
+    "blendSampleCount": 6
   },
   "dyes": {
     "black": {
       "unmatchedColor": {
-        "mode": "nearest",
+        "mode": "blend",
         "distanceMetric": "oklch",
-        "threshold": 0.1
+        "threshold": 0.1,
+        "blendSampleCount": 6
       },
       "stats": {
         "referencePairs": 2,
@@ -453,9 +455,10 @@
     },
     "blue": {
       "unmatchedColor": {
-        "mode": "nearest",
+        "mode": "blend",
         "distanceMetric": "oklch",
-        "threshold": 0.1
+        "threshold": 0.1,
+        "blendSampleCount": 6
       },
       "stats": {
         "referencePairs": 2,
@@ -897,9 +900,10 @@
     },
     "brown": {
       "unmatchedColor": {
-        "mode": "nearest",
+        "mode": "blend",
         "distanceMetric": "oklch",
-        "threshold": 0.1
+        "threshold": 0.1,
+        "blendSampleCount": 6
       },
       "stats": {
         "referencePairs": 2,
@@ -1341,9 +1345,10 @@
     },
     "cyan": {
       "unmatchedColor": {
-        "mode": "nearest",
+        "mode": "blend",
         "distanceMetric": "oklch",
-        "threshold": 0.1
+        "threshold": 0.1,
+        "blendSampleCount": 6
       },
       "stats": {
         "referencePairs": 2,
@@ -1785,9 +1790,10 @@
     },
     "gray": {
       "unmatchedColor": {
-        "mode": "nearest",
+        "mode": "blend",
         "distanceMetric": "oklch",
-        "threshold": 0.1
+        "threshold": 0.1,
+        "blendSampleCount": 6
       },
       "stats": {
         "referencePairs": 2,
@@ -2229,9 +2235,10 @@
     },
     "green": {
       "unmatchedColor": {
-        "mode": "nearest",
+        "mode": "blend",
         "distanceMetric": "oklch",
-        "threshold": 0.1
+        "threshold": 0.1,
+        "blendSampleCount": 6
       },
       "stats": {
         "referencePairs": 2,
@@ -2673,9 +2680,10 @@
     },
     "light_blue": {
       "unmatchedColor": {
-        "mode": "nearest",
+        "mode": "blend",
         "distanceMetric": "oklch",
-        "threshold": 0.1
+        "threshold": 0.1,
+        "blendSampleCount": 6
       },
       "stats": {
         "referencePairs": 2,
@@ -3117,9 +3125,10 @@
     },
     "light_gray": {
       "unmatchedColor": {
-        "mode": "nearest",
+        "mode": "blend",
         "distanceMetric": "oklch",
-        "threshold": 0.1
+        "threshold": 0.1,
+        "blendSampleCount": 6
       },
       "stats": {
         "referencePairs": 2,
@@ -3561,9 +3570,10 @@
     },
     "lime": {
       "unmatchedColor": {
-        "mode": "nearest",
+        "mode": "blend",
         "distanceMetric": "oklch",
-        "threshold": 0.1
+        "threshold": 0.1,
+        "blendSampleCount": 6
       },
       "stats": {
         "referencePairs": 2,
@@ -4005,9 +4015,10 @@
     },
     "magenta": {
       "unmatchedColor": {
-        "mode": "nearest",
+        "mode": "blend",
         "distanceMetric": "oklch",
-        "threshold": 0.1
+        "threshold": 0.1,
+        "blendSampleCount": 6
       },
       "stats": {
         "referencePairs": 2,
@@ -4449,9 +4460,10 @@
     },
     "orange": {
       "unmatchedColor": {
-        "mode": "nearest",
+        "mode": "blend",
         "distanceMetric": "oklch",
-        "threshold": 0.1
+        "threshold": 0.1,
+        "blendSampleCount": 6
       },
       "stats": {
         "referencePairs": 2,
@@ -4893,9 +4905,10 @@
     },
     "pink": {
       "unmatchedColor": {
-        "mode": "nearest",
+        "mode": "blend",
         "distanceMetric": "oklch",
-        "threshold": 0.1
+        "threshold": 0.1,
+        "blendSampleCount": 6
       },
       "stats": {
         "referencePairs": 2,
@@ -5337,9 +5350,10 @@
     },
     "purple": {
       "unmatchedColor": {
-        "mode": "nearest",
+        "mode": "blend",
         "distanceMetric": "oklch",
-        "threshold": 0.1
+        "threshold": 0.1,
+        "blendSampleCount": 6
       },
       "stats": {
         "referencePairs": 2,
@@ -5781,9 +5795,10 @@
     },
     "red": {
       "unmatchedColor": {
-        "mode": "nearest",
+        "mode": "blend",
         "distanceMetric": "oklch",
-        "threshold": 0.1
+        "threshold": 0.1,
+        "blendSampleCount": 6
       },
       "stats": {
         "referencePairs": 2,
@@ -6225,9 +6240,10 @@
     },
     "white": {
       "unmatchedColor": {
-        "mode": "nearest",
+        "mode": "blend",
         "distanceMetric": "oklch",
-        "threshold": 0.1
+        "threshold": 0.1,
+        "blendSampleCount": 6
       },
       "stats": {
         "referencePairs": 2,
@@ -6669,9 +6685,10 @@
     },
     "yellow": {
       "unmatchedColor": {
-        "mode": "nearest",
+        "mode": "blend",
         "distanceMetric": "oklch",
-        "threshold": 0.1
+        "threshold": 0.1,
+        "blendSampleCount": 6
       },
       "stats": {
         "referencePairs": 2,
@@ -7119,19 +7136,22 @@
           "outputFile": "glass_fluid_pipe_black.png",
           "totalPixels": 256,
           "transparentPixels": 104,
-          "exactMatches": 104,
-          "approximateMatches": 0,
+          "exactMatches": 0,
+          "approximateMatches": 104,
+          "paletteBlendMatches": 104,
+          "maskedPixels": 0,
           "preservedPixels": 48,
           "unmatchedColor": {
-            "mode": "nearest",
+            "mode": "blend",
             "distanceMetric": "oklch",
-            "threshold": 0.1
+            "threshold": 0.1,
+            "blendSampleCount": 6
           }
         }
       },
       "totals": {
-        "exactMatches": 104,
-        "approximateMatches": 0,
+        "exactMatches": 0,
+        "approximateMatches": 104,
         "preservedPixels": 48,
         "transparentPixels": 104
       }
@@ -7142,19 +7162,22 @@
           "outputFile": "glass_fluid_pipe_blue.png",
           "totalPixels": 256,
           "transparentPixels": 104,
-          "exactMatches": 104,
-          "approximateMatches": 0,
+          "exactMatches": 0,
+          "approximateMatches": 104,
+          "paletteBlendMatches": 104,
+          "maskedPixels": 0,
           "preservedPixels": 48,
           "unmatchedColor": {
-            "mode": "nearest",
+            "mode": "blend",
             "distanceMetric": "oklch",
-            "threshold": 0.1
+            "threshold": 0.1,
+            "blendSampleCount": 6
           }
         }
       },
       "totals": {
-        "exactMatches": 104,
-        "approximateMatches": 0,
+        "exactMatches": 0,
+        "approximateMatches": 104,
         "preservedPixels": 48,
         "transparentPixels": 104
       }
@@ -7165,19 +7188,22 @@
           "outputFile": "glass_fluid_pipe_brown.png",
           "totalPixels": 256,
           "transparentPixels": 104,
-          "exactMatches": 104,
-          "approximateMatches": 0,
+          "exactMatches": 0,
+          "approximateMatches": 104,
+          "paletteBlendMatches": 104,
+          "maskedPixels": 0,
           "preservedPixels": 48,
           "unmatchedColor": {
-            "mode": "nearest",
+            "mode": "blend",
             "distanceMetric": "oklch",
-            "threshold": 0.1
+            "threshold": 0.1,
+            "blendSampleCount": 6
           }
         }
       },
       "totals": {
-        "exactMatches": 104,
-        "approximateMatches": 0,
+        "exactMatches": 0,
+        "approximateMatches": 104,
         "preservedPixels": 48,
         "transparentPixels": 104
       }
@@ -7188,19 +7214,22 @@
           "outputFile": "glass_fluid_pipe_cyan.png",
           "totalPixels": 256,
           "transparentPixels": 104,
-          "exactMatches": 104,
-          "approximateMatches": 0,
+          "exactMatches": 0,
+          "approximateMatches": 104,
+          "paletteBlendMatches": 104,
+          "maskedPixels": 0,
           "preservedPixels": 48,
           "unmatchedColor": {
-            "mode": "nearest",
+            "mode": "blend",
             "distanceMetric": "oklch",
-            "threshold": 0.1
+            "threshold": 0.1,
+            "blendSampleCount": 6
           }
         }
       },
       "totals": {
-        "exactMatches": 104,
-        "approximateMatches": 0,
+        "exactMatches": 0,
+        "approximateMatches": 104,
         "preservedPixels": 48,
         "transparentPixels": 104
       }
@@ -7211,19 +7240,22 @@
           "outputFile": "glass_fluid_pipe_gray.png",
           "totalPixels": 256,
           "transparentPixels": 104,
-          "exactMatches": 104,
-          "approximateMatches": 0,
+          "exactMatches": 0,
+          "approximateMatches": 104,
+          "paletteBlendMatches": 104,
+          "maskedPixels": 0,
           "preservedPixels": 48,
           "unmatchedColor": {
-            "mode": "nearest",
+            "mode": "blend",
             "distanceMetric": "oklch",
-            "threshold": 0.1
+            "threshold": 0.1,
+            "blendSampleCount": 6
           }
         }
       },
       "totals": {
-        "exactMatches": 104,
-        "approximateMatches": 0,
+        "exactMatches": 0,
+        "approximateMatches": 104,
         "preservedPixels": 48,
         "transparentPixels": 104
       }
@@ -7234,19 +7266,22 @@
           "outputFile": "glass_fluid_pipe_green.png",
           "totalPixels": 256,
           "transparentPixels": 104,
-          "exactMatches": 104,
-          "approximateMatches": 0,
+          "exactMatches": 0,
+          "approximateMatches": 104,
+          "paletteBlendMatches": 104,
+          "maskedPixels": 0,
           "preservedPixels": 48,
           "unmatchedColor": {
-            "mode": "nearest",
+            "mode": "blend",
             "distanceMetric": "oklch",
-            "threshold": 0.1
+            "threshold": 0.1,
+            "blendSampleCount": 6
           }
         }
       },
       "totals": {
-        "exactMatches": 104,
-        "approximateMatches": 0,
+        "exactMatches": 0,
+        "approximateMatches": 104,
         "preservedPixels": 48,
         "transparentPixels": 104
       }
@@ -7257,19 +7292,22 @@
           "outputFile": "glass_fluid_pipe_light_blue.png",
           "totalPixels": 256,
           "transparentPixels": 104,
-          "exactMatches": 104,
-          "approximateMatches": 0,
+          "exactMatches": 0,
+          "approximateMatches": 104,
+          "paletteBlendMatches": 104,
+          "maskedPixels": 0,
           "preservedPixels": 48,
           "unmatchedColor": {
-            "mode": "nearest",
+            "mode": "blend",
             "distanceMetric": "oklch",
-            "threshold": 0.1
+            "threshold": 0.1,
+            "blendSampleCount": 6
           }
         }
       },
       "totals": {
-        "exactMatches": 104,
-        "approximateMatches": 0,
+        "exactMatches": 0,
+        "approximateMatches": 104,
         "preservedPixels": 48,
         "transparentPixels": 104
       }
@@ -7280,19 +7318,22 @@
           "outputFile": "glass_fluid_pipe_light_gray.png",
           "totalPixels": 256,
           "transparentPixels": 104,
-          "exactMatches": 104,
-          "approximateMatches": 0,
+          "exactMatches": 0,
+          "approximateMatches": 104,
+          "paletteBlendMatches": 104,
+          "maskedPixels": 0,
           "preservedPixels": 48,
           "unmatchedColor": {
-            "mode": "nearest",
+            "mode": "blend",
             "distanceMetric": "oklch",
-            "threshold": 0.1
+            "threshold": 0.1,
+            "blendSampleCount": 6
           }
         }
       },
       "totals": {
-        "exactMatches": 104,
-        "approximateMatches": 0,
+        "exactMatches": 0,
+        "approximateMatches": 104,
         "preservedPixels": 48,
         "transparentPixels": 104
       }
@@ -7303,19 +7344,22 @@
           "outputFile": "glass_fluid_pipe_lime.png",
           "totalPixels": 256,
           "transparentPixels": 104,
-          "exactMatches": 104,
-          "approximateMatches": 0,
+          "exactMatches": 0,
+          "approximateMatches": 104,
+          "paletteBlendMatches": 104,
+          "maskedPixels": 0,
           "preservedPixels": 48,
           "unmatchedColor": {
-            "mode": "nearest",
+            "mode": "blend",
             "distanceMetric": "oklch",
-            "threshold": 0.1
+            "threshold": 0.1,
+            "blendSampleCount": 6
           }
         }
       },
       "totals": {
-        "exactMatches": 104,
-        "approximateMatches": 0,
+        "exactMatches": 0,
+        "approximateMatches": 104,
         "preservedPixels": 48,
         "transparentPixels": 104
       }
@@ -7326,19 +7370,22 @@
           "outputFile": "glass_fluid_pipe_magenta.png",
           "totalPixels": 256,
           "transparentPixels": 104,
-          "exactMatches": 104,
-          "approximateMatches": 0,
+          "exactMatches": 0,
+          "approximateMatches": 104,
+          "paletteBlendMatches": 104,
+          "maskedPixels": 0,
           "preservedPixels": 48,
           "unmatchedColor": {
-            "mode": "nearest",
+            "mode": "blend",
             "distanceMetric": "oklch",
-            "threshold": 0.1
+            "threshold": 0.1,
+            "blendSampleCount": 6
           }
         }
       },
       "totals": {
-        "exactMatches": 104,
-        "approximateMatches": 0,
+        "exactMatches": 0,
+        "approximateMatches": 104,
         "preservedPixels": 48,
         "transparentPixels": 104
       }
@@ -7349,19 +7396,22 @@
           "outputFile": "glass_fluid_pipe_orange.png",
           "totalPixels": 256,
           "transparentPixels": 104,
-          "exactMatches": 104,
-          "approximateMatches": 0,
+          "exactMatches": 0,
+          "approximateMatches": 104,
+          "paletteBlendMatches": 104,
+          "maskedPixels": 0,
           "preservedPixels": 48,
           "unmatchedColor": {
-            "mode": "nearest",
+            "mode": "blend",
             "distanceMetric": "oklch",
-            "threshold": 0.1
+            "threshold": 0.1,
+            "blendSampleCount": 6
           }
         }
       },
       "totals": {
-        "exactMatches": 104,
-        "approximateMatches": 0,
+        "exactMatches": 0,
+        "approximateMatches": 104,
         "preservedPixels": 48,
         "transparentPixels": 104
       }
@@ -7372,19 +7422,22 @@
           "outputFile": "glass_fluid_pipe_pink.png",
           "totalPixels": 256,
           "transparentPixels": 104,
-          "exactMatches": 104,
-          "approximateMatches": 0,
+          "exactMatches": 0,
+          "approximateMatches": 104,
+          "paletteBlendMatches": 104,
+          "maskedPixels": 0,
           "preservedPixels": 48,
           "unmatchedColor": {
-            "mode": "nearest",
+            "mode": "blend",
             "distanceMetric": "oklch",
-            "threshold": 0.1
+            "threshold": 0.1,
+            "blendSampleCount": 6
           }
         }
       },
       "totals": {
-        "exactMatches": 104,
-        "approximateMatches": 0,
+        "exactMatches": 0,
+        "approximateMatches": 104,
         "preservedPixels": 48,
         "transparentPixels": 104
       }
@@ -7395,19 +7448,22 @@
           "outputFile": "glass_fluid_pipe_purple.png",
           "totalPixels": 256,
           "transparentPixels": 104,
-          "exactMatches": 104,
-          "approximateMatches": 0,
+          "exactMatches": 0,
+          "approximateMatches": 104,
+          "paletteBlendMatches": 104,
+          "maskedPixels": 0,
           "preservedPixels": 48,
           "unmatchedColor": {
-            "mode": "nearest",
+            "mode": "blend",
             "distanceMetric": "oklch",
-            "threshold": 0.1
+            "threshold": 0.1,
+            "blendSampleCount": 6
           }
         }
       },
       "totals": {
-        "exactMatches": 104,
-        "approximateMatches": 0,
+        "exactMatches": 0,
+        "approximateMatches": 104,
         "preservedPixels": 48,
         "transparentPixels": 104
       }
@@ -7418,19 +7474,22 @@
           "outputFile": "glass_fluid_pipe_red.png",
           "totalPixels": 256,
           "transparentPixels": 104,
-          "exactMatches": 104,
-          "approximateMatches": 0,
+          "exactMatches": 0,
+          "approximateMatches": 104,
+          "paletteBlendMatches": 104,
+          "maskedPixels": 0,
           "preservedPixels": 48,
           "unmatchedColor": {
-            "mode": "nearest",
+            "mode": "blend",
             "distanceMetric": "oklch",
-            "threshold": 0.1
+            "threshold": 0.1,
+            "blendSampleCount": 6
           }
         }
       },
       "totals": {
-        "exactMatches": 104,
-        "approximateMatches": 0,
+        "exactMatches": 0,
+        "approximateMatches": 104,
         "preservedPixels": 48,
         "transparentPixels": 104
       }
@@ -7441,19 +7500,22 @@
           "outputFile": "glass_fluid_pipe_white.png",
           "totalPixels": 256,
           "transparentPixels": 104,
-          "exactMatches": 104,
-          "approximateMatches": 0,
+          "exactMatches": 0,
+          "approximateMatches": 104,
+          "paletteBlendMatches": 104,
+          "maskedPixels": 0,
           "preservedPixels": 48,
           "unmatchedColor": {
-            "mode": "nearest",
+            "mode": "blend",
             "distanceMetric": "oklch",
-            "threshold": 0.1
+            "threshold": 0.1,
+            "blendSampleCount": 6
           }
         }
       },
       "totals": {
-        "exactMatches": 104,
-        "approximateMatches": 0,
+        "exactMatches": 0,
+        "approximateMatches": 104,
         "preservedPixels": 48,
         "transparentPixels": 104
       }
@@ -7464,19 +7526,22 @@
           "outputFile": "glass_fluid_pipe_yellow.png",
           "totalPixels": 256,
           "transparentPixels": 104,
-          "exactMatches": 104,
-          "approximateMatches": 0,
+          "exactMatches": 0,
+          "approximateMatches": 104,
+          "paletteBlendMatches": 104,
+          "maskedPixels": 0,
           "preservedPixels": 48,
           "unmatchedColor": {
-            "mode": "nearest",
+            "mode": "blend",
             "distanceMetric": "oklch",
-            "threshold": 0.1
+            "threshold": 0.1,
+            "blendSampleCount": 6
           }
         }
       },
       "totals": {
-        "exactMatches": 104,
-        "approximateMatches": 0,
+        "exactMatches": 0,
+        "approximateMatches": 104,
         "preservedPixels": 48,
         "transparentPixels": 104
       }

@@ -20,6 +20,7 @@ const ORIGINAL_DIR = path.join(ROOT_DIR, "original");
 const DYED_VARIANTS_DIR = path.join(ROOT_DIR, "dyedvariants");
 const INPUT_DIR = path.join(ROOT_DIR, "in");
 const OUTPUT_DIR = path.join(ROOT_DIR, "out");
+const DEFAULT_MASK_DIR = path.join(ROOT_DIR, "masks");
 
 function parseCliArgs(argv) {
   const options = {
@@ -35,6 +36,16 @@ function parseCliArgs(argv) {
     if (arg.startsWith("--unmatched-threshold=")) {
       const threshold = arg.slice("--unmatched-threshold=".length);
       options.unmatchedColor.threshold = threshold === "none" ? null : Number(threshold);
+      continue;
+    }
+
+    if (arg.startsWith("--mask=")) {
+      options.maskPath = path.resolve(ROOT_DIR, arg.slice("--mask=".length));
+      continue;
+    }
+
+    if (arg.startsWith("--mask-dir=")) {
+      options.maskDir = path.resolve(ROOT_DIR, arg.slice("--mask-dir=".length));
       continue;
     }
 
@@ -85,6 +96,8 @@ async function processInputImages(options) {
     inputDir,
     outputDir,
     mappingReportPath,
+    maskDir,
+    maskPath,
     mappings,
   } = options;
 
@@ -92,6 +105,28 @@ async function processInputImages(options) {
   ensureDir(outputDir);
 
   const inputFiles = listPngFiles(inputDir);
+  const sharedMask = maskPath ? await readPng(maskPath) : null;
+  const maskCache = new Map();
+
+  async function readInputMask(inputFile) {
+    if (sharedMask) {
+      return sharedMask;
+    }
+
+    if (!maskDir) {
+      return null;
+    }
+
+    if (maskCache.has(inputFile)) {
+      return maskCache.get(inputFile);
+    }
+
+    const inputMaskPath = path.join(maskDir, inputFile);
+    const mask = fs.existsSync(inputMaskPath) ? await readPng(inputMaskPath) : null;
+    maskCache.set(inputFile, mask);
+    return mask;
+  }
+
   const processingSummary = {};
 
   for (const [dye, mapping] of Object.entries(mappings)) {
@@ -109,7 +144,8 @@ async function processInputImages(options) {
       const inputPath = path.join(inputDir, inputFile);
       const outputPath = path.join(outputDir, inputFile.replace(/\.png$/i, `_${dye}.png`));
       const input = await readPng(inputPath);
-      const { image, stats } = transformImage(input, mapping);
+      const maskImage = await readInputMask(inputFile);
+      const { image, stats } = transformImage(input, mapping, { maskImage });
 
       await writePng(outputPath, image);
 
@@ -142,6 +178,9 @@ async function processInputImages(options) {
 
 async function main() {
   const cliOptions = parseCliArgs(process.argv.slice(2));
+  if (!cliOptions.maskDir && fs.existsSync(DEFAULT_MASK_DIR)) {
+    cliOptions.maskDir = DEFAULT_MASK_DIR;
+  }
   const mappings = await buildColorMappingsFromDirectories({
     originalDir: ORIGINAL_DIR,
     variantsDir: DYED_VARIANTS_DIR,
@@ -151,12 +190,17 @@ async function main() {
     inputDir: INPUT_DIR,
     outputDir: OUTPUT_DIR,
     mappingReportPath: path.join(OUTPUT_DIR, "color-mappings.json"),
+    maskDir: cliOptions.maskDir,
+    maskPath: cliOptions.maskPath,
     mappings,
   });
 
   console.log(`Generated ${summary.filesPerDye} input texture(s) for ${summary.dyes} dye(s).`);
   console.log(`Mappings written to ${path.relative(ROOT_DIR, summary.mappingReportPath)}.`);
   console.log(`Unmatched colors: ${cliOptions.unmatchedColor.mode}${cliOptions.unmatchedColor.threshold == null ? "" : ` (threshold ${cliOptions.unmatchedColor.threshold})`}.`);
+  if (cliOptions.maskPath || cliOptions.maskDir) {
+    console.log(`Masks: ${path.relative(ROOT_DIR, cliOptions.maskPath || cliOptions.maskDir)}.`);
+  }
 }
 
 main().catch((error) => {

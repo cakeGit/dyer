@@ -3,9 +3,11 @@ const state = {
   dyeMap: new Map(),
   currentDye: null,
   threshold: 10,
-  unmatchedMode: "nearest",
+  unmatchedMode: "blend",
   sourceImage: null,
   sourceName: "Bundled demo",
+  maskImageData: null,
+  maskName: null,
   mappingSource: "bundled",
   // Preserved so the user can revert to bundled after applying custom mappings.
   bundledState: { dyes: [], dyeMap: new Map() },
@@ -19,6 +21,9 @@ const ui = {
   thresholdNumber: document.getElementById("thresholdNumber"),
   modeHint: document.getElementById("modeHint"),
   imageInput: document.getElementById("imageInput"),
+  maskInput: document.getElementById("maskInput"),
+  maskLabel: document.getElementById("maskLabel"),
+  clearMask: document.getElementById("clearMask"),
   loadDemo: document.getElementById("loadDemo"),
   downloadLink: document.getElementById("downloadLink"),
   exportZipButton: document.getElementById("exportZipButton"),
@@ -121,7 +126,11 @@ function buildDye(name, rawMapping) {
       target,
       sourceOklch: entry.sourceOklch || rgbToOklch(source),
       delta: [target[0] - source[0], target[1] - source[1], target[2] - source[2]],
+      confidence: entry.sampleCount && entry.chosenCount
+        ? Math.max(0.05, Math.min(1, entry.chosenCount / entry.sampleCount))
+        : 1,
       sampleCount: entry.sampleCount,
+      chosenCount: entry.chosenCount,
     };
   });
 
@@ -148,16 +157,17 @@ function normaliseMode(mode) {
     preserve: "keep",
     keep: "keep",
     nearest: "nearest",
-    approximate: "approximate",
+    approximate: "blend",
+    blend: "blend",
   };
-  return map[mode] || "nearest";
+  return map[mode] || "blend";
 }
 
 function updateModeHint() {
   const messages = {
-    keep: "Exact recipe colors are recolored; everything else stays untouched.",
+    keep: "Exact mapped colors are recolored; everything else stays untouched.",
     nearest: "Unfamiliar shades snap to the nearest mapped palette color when they fall inside the threshold.",
-    approximate: "Unfamiliar shades borrow the nearest recipe's color drift, blended by distance for softer recolors.",
+    blend: "Palette samples guide a weighted color shift, preserving more shade detail than hard replacement.",
   };
   ui.modeHint.textContent = messages[state.unmatchedMode];
 }
@@ -212,7 +222,7 @@ function renderDyePicker() {
     ui.swatchGrid.append(button);
   }
 
-  ui.mappingCount.textContent = `${state.dyes.length} vats loaded`;
+  ui.mappingCount.textContent = `${state.dyes.length} mappings loaded`;
   updateMappingSourceBadge();
 }
 
@@ -248,54 +258,147 @@ function drawImageToCanvas(image, canvas, context) {
   context.drawImage(image, 0, 0);
 }
 
-function findNearestEntry(rgb, dye) {
+function getSortedPaletteMatches(rgb, dye) {
   const activeDye = dye || state.currentDye;
   if (!activeDye.entries.length) {
-    return null;
+    return [];
   }
 
   const sourceOklch = rgbToOklch(rgb);
-  let bestMatch = null;
 
-  for (const entry of activeDye.entries) {
-    const distance = oklchDistance(sourceOklch, entry.sourceOklch);
-    if (!bestMatch || distance < bestMatch.distance) {
-      bestMatch = { distance, entry };
-    }
-  }
-
-  return bestMatch;
+  return activeDye.entries
+    .map((entry) => ({ distance: oklchDistance(sourceOklch, entry.sourceOklch), entry }))
+    .sort((left, right) => left.distance - right.distance);
 }
 
-function transformPixel(pixel, nearest) {
+function findNearestEntry(rgb, dye) {
+  return getSortedPaletteMatches(rgb, dye)[0] || null;
+}
+
+function isInsideThreshold(nearest) {
   // state.threshold is in display units (0–100); OKLCH distance is 0.0–1.0.
   const oklchThreshold = state.threshold / 100;
   if (!nearest || nearest.distance > oklchThreshold) {
+    return false;
+  }
+
+  return true;
+}
+
+function findPaletteBlend(rgb, dye) {
+  const matches = getSortedPaletteMatches(rgb, dye);
+  const nearest = matches[0];
+  if (!isInsideThreshold(nearest)) {
+    return null;
+  }
+
+  const selected = matches.slice(0, 6);
+  const farthestSelected = selected[selected.length - 1] || nearest;
+  const oklchThreshold = state.threshold / 100;
+  const radius = Math.max(oklchThreshold, farthestSelected.distance, 0.12);
+  let totalWeight = 0;
+  const drift = [0, 0, 0];
+
+  for (const match of selected) {
+    const normalizedDistance = match.distance / radius;
+    const proximity = 1 / (1 + (normalizedDistance * normalizedDistance * 4));
+    const confidenceWeight = 0.25 + (0.75 * match.entry.confidence);
+    const weight = proximity * confidenceWeight;
+    drift[0] += match.entry.delta[0] * weight;
+    drift[1] += match.entry.delta[1] * weight;
+    drift[2] += match.entry.delta[2] * weight;
+    totalWeight += weight;
+  }
+
+  if (totalWeight === 0) {
+    return null;
+  }
+
+  const strength = oklchThreshold === 0 ? 1 : 1 - (nearest.distance / oklchThreshold);
+  return [
+    pixelChannel(rgb[0], drift[0], totalWeight, strength),
+    pixelChannel(rgb[1], drift[1], totalWeight, strength),
+    pixelChannel(rgb[2], drift[2], totalWeight, strength),
+  ];
+}
+
+function pixelChannel(source, drift, totalWeight, strength) {
+  return clampChannel(source + ((drift / totalWeight) * Math.max(0, Math.min(1, strength))));
+}
+
+function transformPixel(pixel, dye) {
+  const exact = dye.exactMap.get(pixel.join(","));
+
+  if (exact && state.unmatchedMode !== "blend") {
+    return { rgb: exact, type: "exact" };
+  }
+
+  if (state.unmatchedMode === "keep") {
     return { rgb: pixel, type: "untouched" };
   }
 
   if (state.unmatchedMode === "nearest") {
+    const nearest = findNearestEntry(pixel, dye);
+    if (!isInsideThreshold(nearest)) {
+      return { rgb: pixel, type: "untouched" };
+    }
     return { rgb: nearest.entry.target, type: "fallback" };
   }
 
-  if (state.unmatchedMode === "approximate") {
-    const intensity = oklchThreshold === 0 ? 0 : 1 - (nearest.distance / oklchThreshold);
-    const drifted = [
-      pixel[0] + (nearest.entry.delta[0] * intensity),
-      pixel[1] + (nearest.entry.delta[1] * intensity),
-      pixel[2] + (nearest.entry.delta[2] * intensity),
-    ];
-    return { rgb: drifted.map(clampChannel), type: "fallback" };
+  if (state.unmatchedMode === "blend") {
+    const blended = findPaletteBlend(pixel, dye);
+    if (blended) {
+      return { rgb: blended, type: "fallback" };
+    }
+
+    if (exact) {
+      return { rgb: exact, type: "exact" };
+    }
   }
 
   return { rgb: pixel, type: "untouched" };
 }
 
-function transformImageDataWithDye(imageData, dye) {
+function getMaskStrength(maskData, index) {
+  if (!maskData) {
+    return 1;
+  }
+
+  const alpha = maskData.data[index + 3] / 255;
+  if (alpha === 0) {
+    return 0;
+  }
+
+  const luminance = (
+    (0.2126 * maskData.data[index]) +
+    (0.7152 * maskData.data[index + 1]) +
+    (0.0722 * maskData.data[index + 2])
+  ) / 255;
+  return Math.max(0, Math.min(1, luminance * alpha));
+}
+
+function applyMaskStrength(sourceRgb, transformedRgb, strength) {
+  if (strength >= 1) {
+    return transformedRgb;
+  }
+
+  return [
+    clampChannel(sourceRgb[0] + ((transformedRgb[0] - sourceRgb[0]) * strength)),
+    clampChannel(sourceRgb[1] + ((transformedRgb[1] - sourceRgb[1]) * strength)),
+    clampChannel(sourceRgb[2] + ((transformedRgb[2] - sourceRgb[2]) * strength)),
+  ];
+}
+
+function transformImageDataWithDye(imageData, dye, maskData = null) {
+  if (maskData && (maskData.width !== imageData.width || maskData.height !== imageData.height)) {
+    throw new Error(`Mask must match the source image size (${imageData.width}x${imageData.height}).`);
+  }
+
   const { data } = imageData;
   const stats = {
     exact: 0,
     fallback: 0,
+    masked: 0,
     untouched: 0,
     opaque: 0,
   };
@@ -308,20 +411,22 @@ function transformImageDataWithDye(imageData, dye) {
 
     stats.opaque += 1;
     const rgb = [data[index], data[index + 1], data[index + 2]];
-    const exact = dye.exactMap.get(rgb.join(","));
+    const maskStrength = getMaskStrength(maskData, index);
 
-    if (exact) {
-      data[index] = exact[0];
-      data[index + 1] = exact[1];
-      data[index + 2] = exact[2];
-      stats.exact += 1;
+    if (maskStrength <= 0) {
+      stats.masked += 1;
+      stats.untouched += 1;
       continue;
     }
 
-    const transformed = transformPixel(rgb, findNearestEntry(rgb, dye));
-    data[index] = transformed.rgb[0];
-    data[index + 1] = transformed.rgb[1];
-    data[index + 2] = transformed.rgb[2];
+    const transformed = transformPixel(rgb, dye);
+    const maskedRgb = applyMaskStrength(rgb, transformed.rgb, maskStrength);
+    data[index] = maskedRgb[0];
+    data[index + 1] = maskedRgb[1];
+    data[index + 2] = maskedRgb[2];
+    if (maskStrength < 1) {
+      stats.masked += 1;
+    }
     stats[transformed.type] += 1;
   }
 
@@ -342,7 +447,7 @@ function transformCurrentImage() {
   previewContexts.after.drawImage(sourceImage, 0, 0);
 
   const imageData = previewContexts.after.getImageData(0, 0, ui.afterCanvas.width, ui.afterCanvas.height);
-  const stats = transformImageDataWithDye(imageData, currentDye);
+  const stats = transformImageDataWithDye(imageData, currentDye, state.maskImageData);
   previewContexts.after.putImageData(imageData, 0, 0);
   return stats;
 }
@@ -404,7 +509,7 @@ async function exportAllAsZip() {
       ctx.drawImage(state.sourceImage, 0, 0);
 
       const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-      transformImageDataWithDye(imageData, dye);
+      transformImageDataWithDye(imageData, dye, state.maskImageData);
       ctx.putImageData(imageData, 0, 0);
 
       const blob = await new Promise((resolve, reject) => {
@@ -448,6 +553,15 @@ function getImagePixelData(image) {
   const ctx = canvas.getContext("2d", { willReadFrequently: true });
   ctx.drawImage(image, 0, 0);
   return ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+}
+
+function getImageDataFromImage(image) {
+  const canvas = document.createElement("canvas");
+  canvas.width = image.width;
+  canvas.height = image.height;
+  const ctx = canvas.getContext("2d", { willReadFrequently: true });
+  ctx.drawImage(image, 0, 0);
+  return ctx.getImageData(0, 0, canvas.width, canvas.height);
 }
 
 function readFileAsImage(file) {
@@ -543,10 +657,12 @@ function addPairRow() {
   });
 
   for (const fileInput of row.querySelectorAll("input[type='file']")) {
-    const label = fileInput.closest(".upload-drop-sm").querySelector(".pair-file-label");
+    const dropEl = fileInput.closest(".upload-drop-sm");
+    const label = dropEl.querySelector(".pair-file-label");
     fileInput.addEventListener("change", () => {
       label.textContent = fileInput.files[0]?.name ?? "Choose image";
     });
+    setupDropZone(dropEl, fileInput, { accept: "image/*" });
   }
 
   ui.pairRowList.append(row);
@@ -793,10 +909,12 @@ function applyBulkResults({ matched }) {
     });
 
     for (const fileInput of row.querySelectorAll("input[type='file']")) {
-      const label = fileInput.closest(".upload-drop-sm").querySelector(".pair-file-label");
+      const dropEl = fileInput.closest(".upload-drop-sm");
+      const label = dropEl.querySelector(".pair-file-label");
       fileInput.addEventListener("change", () => {
         label.textContent = fileInput.files[0]?.name ?? "Choose image";
       });
+      setupDropZone(dropEl, fileInput, { accept: "image/*" });
     }
 
     ui.pairRowList.append(row);
@@ -911,9 +1029,13 @@ function renderPreview() {
 
   ui.sourceLabel.textContent = state.sourceName;
   ui.resultLabel.textContent = `${state.currentDye.label} transform`;
-  const stats = transformCurrentImage();
-  updateStats(stats);
-  refreshDownloadLink();
+  try {
+    const stats = transformCurrentImage();
+    updateStats(stats);
+    refreshDownloadLink();
+  } catch (error) {
+    ui.resultLabel.textContent = error.message;
+  }
 }
 
 function loadImage(src, name) {
@@ -929,6 +1051,24 @@ async function setSourceImage(src, name) {
   const loaded = await loadImage(src, name);
   state.sourceImage = loaded.image;
   state.sourceName = loaded.name;
+  renderPreview();
+}
+
+async function setMaskImage(file) {
+  const image = await readFileAsImage(file);
+  state.maskImageData = getImageDataFromImage(image);
+  state.maskName = file.name;
+  ui.maskLabel.textContent = file.name;
+  ui.clearMask.hidden = false;
+  renderPreview();
+}
+
+function clearMaskImage() {
+  state.maskImageData = null;
+  state.maskName = null;
+  ui.maskInput.value = "";
+  ui.maskLabel.textContent = "No mask";
+  ui.clearMask.hidden = true;
   renderPreview();
 }
 
@@ -960,6 +1100,65 @@ async function loadMappings() {
 
   renderDyePicker();
   setCurrentDye(state.dyes[0].key);
+}
+
+// ─── Drag-and-drop setup ──────────────────────────────────────────────────────
+
+/**
+ * Adds dragenter/dragover/dragleave/drop listeners to a drop-zone element so
+ * dragged files are captured by the hidden <input> instead of being opened by
+ * the browser's default drag handler.
+ *
+ * @param {HTMLElement} dropEl   - The visible drop zone (label or container)
+ * @param {HTMLInputElement} input - The hidden file input to assign files to
+ * @param {{ accept?: string, multiple?: boolean }} opts
+ */
+function setupDropZone(dropEl, input, { accept = "", multiple = false } = {}) {
+  const acceptPatterns = accept
+    ? accept.split(",").map((s) => s.trim())
+    : [];
+
+  function matchesAccept(file) {
+    if (!acceptPatterns.length) return true;
+    return acceptPatterns.some((p) => {
+      if (p.endsWith("/*")) return file.type.startsWith(p.slice(0, -1));
+      return file.type === p;
+    });
+  }
+
+  dropEl.addEventListener("dragenter", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dropEl.classList.add("drag-over");
+  });
+
+  dropEl.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    e.dataTransfer.dropEffect = "copy";
+    dropEl.classList.add("drag-over");
+  });
+
+  dropEl.addEventListener("dragleave", (e) => {
+    if (!dropEl.contains(e.relatedTarget)) {
+      dropEl.classList.remove("drag-over");
+    }
+  });
+
+  dropEl.addEventListener("drop", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dropEl.classList.remove("drag-over");
+
+    let files = [...(e.dataTransfer.files || [])].filter(matchesAccept);
+    if (!files.length) return;
+    if (!multiple) files = files.slice(0, 1);
+
+    const dt = new DataTransfer();
+    files.forEach((f) => dt.items.add(f));
+    input.files = dt.files;
+    input.dispatchEvent(new Event("change", { bubbles: true }));
+  });
 }
 
 function attachEvents() {
@@ -995,6 +1194,17 @@ function attachEvents() {
     }
   });
 
+  ui.maskInput.addEventListener("change", async (event) => {
+    const [file] = event.target.files || [];
+    if (!file) {
+      return;
+    }
+
+    await setMaskImage(file);
+  });
+
+  ui.clearMask.addEventListener("click", clearMaskImage);
+
   ui.loadDemo.addEventListener("click", async () => {
     await setSourceImage("assets/demo.png", "Bundled demo");
   });
@@ -1019,6 +1229,25 @@ function attachEvents() {
   });
 
   ui.resetBundled.addEventListener("click", resetToBundledMappings);
+
+  // Drag-and-drop for the main image upload
+  setupDropZone(
+    ui.imageInput.closest(".upload-drop"),
+    ui.imageInput,
+    { accept: "image/png,image/*" }
+  );
+
+  setupDropZone(
+    ui.maskInput.closest(".upload-drop"),
+    ui.maskInput,
+    { accept: "image/png,image/*" }
+  );
+
+  // Drag-and-drop for the bulk import zone
+  const bulkDropEl = ui.bulkImportInput.closest(".upload-drop-bulk");
+  if (bulkDropEl) {
+    setupDropZone(bulkDropEl, ui.bulkImportInput, { accept: "image/*", multiple: true });
+  }
 }
 
 async function boot() {

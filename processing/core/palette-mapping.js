@@ -21,12 +21,39 @@ function mostCommonOpaqueTarget(counter) {
   return null;
 }
 
+function rgbFromMappingValue(value) {
+  if (Array.isArray(value)) {
+    return value.slice(0, 3);
+  }
+
+  if (typeof value === "string") {
+    return parseRgbaKey(value).slice(0, 3);
+  }
+
+  throw new Error(`Invalid palette RGB value: ${value}`);
+}
+
+function rgbaFromMappingValue(value, fallbackAlpha = 255) {
+  if (Array.isArray(value)) {
+    return value.length >= 4 ? value : [value[0], value[1], value[2], fallbackAlpha];
+  }
+
+  if (typeof value === "string") {
+    const channels = parseRgbaKey(value);
+    return channels.length >= 4 ? channels : [channels[0], channels[1], channels[2], fallbackAlpha];
+  }
+
+  throw new Error(`Invalid palette RGBA value: ${value}`);
+}
+
 function preparePaletteMapping(mapping) {
   const unmatchedColor = normalizeUnmatchedColorConfig(mapping.unmatchedColor);
   const sourceToTarget = mapping.sourceToTarget || [];
   const approximatePalette = (mapping.approximatePalette || []).map((entry) => ({
     ...entry,
-    sourceOklch: entry.sourceOklch || rgbToOklch(entry.source),
+    source: rgbFromMappingValue(entry.sourceRgb || entry.source),
+    target: rgbFromMappingValue(entry.targetRgb || entry.target),
+    sourceOklch: entry.sourceOklch || rgbToOklch(rgbFromMappingValue(entry.sourceRgb || entry.source)),
   }));
 
   return {
@@ -34,7 +61,11 @@ function preparePaletteMapping(mapping) {
     unmatchedColor,
     sourceToTarget,
     sourceToTargetLookup: new Map(
-      sourceToTarget.map((entry) => [rgbaKey(entry.source[0], entry.source[1], entry.source[2], entry.source[3]), entry.target]),
+      sourceToTarget.map((entry) => {
+        const source = rgbaFromMappingValue(entry.sourceRgba || entry.source);
+        const target = rgbaFromMappingValue(entry.targetRgba || entry.target, source[3]);
+        return [rgbaKey(source[0], source[1], source[2], source[3]), target];
+      }),
     ),
     approximatePalette,
   };
